@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eeeeee" />
+  <title>Install Homepage pop-up · UI recreation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="app-page">
+  <main class="workspace" aria-label="Installation UI preview">
+    <section class="reopen-panel" id="reopen-panel" hidden>
+      <span class="reopen-kicker">FORM INSTALLATION</span>
+      <h1>You're all set.</h1>
+      <p>Open the installation dialog to get your embed code, share link, or instructions.</p>
+      <div class="reopen-actions">
+        <button class="pill pill-dark" id="reopen-button" type="button">Open installation dialog</button>
+        <a class="pill pill-outline" href="demo-site.html" target="_blank" rel="noopener">View live demo ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="dialog-layer" id="dialog-layer">
+    <section class="install-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+      <div class="dialog-content">
+        <header class="dialog-header">
+          <div class="brand-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M11 6C8.3 6 8.6 10 7 11.2 5.7 12.2 5 12.6 5 16 7 16.1 7 20.1 7 24 10.1 24.5 11.1 25.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 6c2.7 0 2.4 4 4 5.2 1.3 1 2 1.4 2 1.4 0 3.4-2 3.5-2 7.5 0 3.9-3.1 4.4-4.1 5.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12.5" cy="15.7" r="1.45" fill="currentColor"/><circle cx="19.5" cy="15.7" r="1.45" fill="currentColor"/><circle cx="16" cy="15.7" r="1.45" fill="currentColor"/></svg>
+          </div>
+          <div class="header-copy">
+            <h1 id="dialog-title">Install Homepage pop-up</h1>
+            <p id="dialog-description">Add this once to <span id="header-domain">harborandco.com</span> — later edits go live without touching code.</p>
+          </div>
+          <button class="icon-button close-button" id="close-dialog" type="button" aria-label="Close installation dialog" title="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+          </button>
+        </header>
+
+        <div class="tabs" role="tablist" aria-label="Installation method">
+          <button class="tab active" role="tab" aria-selected="true" tabindex="0" id="tab-popup" data-tab="popup" aria-controls="tab-panel">Pop-up script</button>
+          <button class="tab" role="tab" aria-selected="false" tabindex="-1" id="tab-inline" data-tab="inline" aria-controls="tab-panel">Inline embed</button>
+          <button class="tab" role="tab" aria-selected="false" tabindex="-1" id="tab-share" data-tab="share" aria-controls="tab-panel">Share link</button>
+        </div>
+
+        <div id="tab-panel" role="tabpanel" aria-labelledby="tab-popup" tabindex="0">
+          <section class="code-card" id="code-card">
+            <div class="code-toolbar">
+              <span class="code-caption" id="code-caption">HTML <span class="dot">·</span> 6 lines</span>
+              <button class="copy-button copied" id="copy-code" type="button" aria-label="Copy installation code">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span id="copy-label">Copied</span>
+              </button>
+            </div>
+            <div class="code-body" id="code-body"></div>
+          </section>
+          <p class="installation-hint" id="installation-hint">Paste just before <code>&lt;/body&gt;</code> on every page, or once in your theme’s footer template.</p>
+          <section class="guides-section" id="guides-section">
+            <h2>Step-by-step guides</h2>
+            <div class="guide-links">
+              <button class="guide-button" type="button" data-guide="shopify"><span class="guide-logo shopify-logo" aria-hidden="true">▣</span> Shopify <span class="external-arrow" aria-hidden="true">↗</span></button>
+              <button class="guide-button" type="button" data-guide="wordpress"><span class="guide-logo wordpress-logo" aria-hidden="true">W</span> WordPress <span class="external-arrow" aria-hidden="true">↗</span></button>
+              <button class="guide-button" type="button" data-guide="webflow"><span class="guide-logo webflow-logo" aria-hidden="true">◩</span> Webflow <span class="external-arrow" aria-hidden="true">↗</span></button>
+            </div>
+          </section>
+          <section class="detection-banner" id="detection-banner" aria-live="polite">
+            <span class="detection-check" id="detection-icon" aria-hidden="true">✓</span>
+            <div class="detection-text"><strong id="detection-title">Detected on harborandco.com</strong><small id="detection-description">Last seen 2 min ago on /collections/kitchen · script v2.4</small></div>
+          </section>
+        </div>
+      </div>
+      <footer class="dialog-footer">
+        <button class="footer-caption footer-settings" id="footer-settings" type="button" title="Customize installation settings">Works with any site that allows custom code</button>
+        <div class="footer-actions">
+          <button class="pill pill-outline email-button" id="email-button" type="button">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="4"/><path d="m3.8 6 8.2 6 8.1-6"/><path d="M17 16.5h5m-2.5-2.5v5"/></svg>
+            Email to developer
+          </button>
+          <button class="pill pill-dark done-button" id="done-button" type="button">Done</button>
+        </div>
+      </footer>
+    </section>
+  </div>
+
+  <dialog class="sub-dialog" id="guide-dialog" aria-labelledby="guide-title">
+    <div class="sub-dialog-header"><span class="sub-kicker">INSTALLATION GUIDE</span><button class="small-icon-button" data-close-guide aria-label="Close guide" type="button">×</button></div>
+    <h2 id="guide-title"></h2><p id="guide-intro"></p><ol id="guide-steps"></ol>
+    <div class="sub-dialog-actions"><button class="pill pill-outline" data-close-guide type="button">Back</button><button class="pill pill-dark" id="guide-copy" type="button">Copy code</button></div>
+  </dialog>
+  <dialog class="sub-dialog settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
+    <div class="sub-dialog-header"><span class="sub-kicker">DEMO SETTINGS</span><button class="small-icon-button" data-close-settings aria-label="Close settings" type="button">×</button></div>
+    <h2 id="settings-title">Customize your installation</h2>
+    <p>These options update all three installation methods. The widget in this package stores test sign-ups locally.</p>
+    <form id="settings-form" class="settings-form" method="dialog">
+      <label>Website domain<input name="domain" required autocomplete="off" /></label>
+      <label>Workspace ID<input name="workspace" required pattern="[a-zA-Z0-9_-]+" /></label>
+      <label>Form ID<input name="form" required pattern="[a-zA-Z0-9_-]+" /></label>
+      <label>Developer email (optional)<input name="developerEmail" type="email" placeholder="developer@example.com" /></label>
+      <div class="sub-dialog-actions"><button type="button" class="pill pill-outline" data-close-settings>Cancel</button><button class="pill pill-dark" type="submit">Save changes</button></div>
+    </form>
+  </dialog>
+  <button class="floating-settings" id="open-settings" type="button" aria-label="Customize demo settings" title="Customize demo settings"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3.3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5m0-14.2-1.5 1.5M6.4 17.6l-1.5 1.5"/></svg></button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="main.js"></script>
+</body>
+</html>

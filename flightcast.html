@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="Interactive four-screen Flightcast-inspired dashboard UI recreation.">
+  <title>Flightcast — four interactive dashboard states · pop-up</title>
+  <link rel="stylesheet" href="./flightcast.css">
+  <script src="./flightcast.js" defer></script>
+</head>
+<body>
+  <div class="app-shell" id="app-shell">
+    <aside class="primary-sidebar" aria-label="Dashboard navigation">
+      <div class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><path d="m12 2 8.5 14.5L12 22l-8.5-5.5L12 2Z"/><path d="M12 2v20M3.5 16.5l8.5-4.5 8.5 4.5"/></svg><strong>Flightcast</strong></div>
+      <nav class="sidebar-nav">
+        <button type="button" class="side-link" data-screen="chat" data-icon="overview"><span class="nav-symbol">⊞</span>Overview</button>
+        <button type="button" class="side-link publishing-parent" id="publishing-toggle" aria-expanded="true"><span class="nav-symbol">♧</span>Publishing <span class="expand-chevron">⌄</span></button>
+        <div class="publishing-subnav" id="publishing-subnav">
+          <a href="?screen=media" class="sub-link" data-screen="media">Platform Customization</a>
+          <button type="button" class="sub-link" data-alias="File Uploads">File Uploads</button>
+          <button type="button" class="sub-link" data-alias="Transcripts">Transcripts</button>
+          <a href="?screen=title" class="sub-link" data-screen="title">AI Generation</a>
+          <button type="button" class="sub-link" data-alias="Real-Time Collaboration">Real-Time Collaboration</button>
+          <button type="button" class="sub-link" data-alias="Scheduling">Scheduling</button>
+          <button type="button" class="sub-link" data-alias="Republishing">Republishing</button>
+        </div>
+        <button type="button" class="side-link" data-screen="analysis"><span class="nav-symbol">▥</span>Analytics <span class="expand-chevron">›</span></button>
+        <a href="?screen=analysis" class="side-link" data-screen="analysis"><span class="nav-symbol">✧</span>AI Insights</a>
+        <button type="button" class="side-link" data-alias="Clips"><span class="nav-symbol">✂</span>Clips <span class="expand-chevron">›</span></button>
+        <button type="button" class="side-link" data-alias="Monetize"><span class="nav-symbol">ⓢ</span>Monetize <span class="expand-chevron">›</span></button>
+        <button type="button" class="side-link" data-alias="YouTube Sync"><span class="nav-symbol">▷</span>YouTube Sync</button>
+        <button type="button" class="side-link" data-alias="Megaphone Integration"><span class="nav-symbol">♧</span>Megaphone Integration</button>
+        <button type="button" class="side-link" data-alias="Migration"><span class="nav-symbol">⇄</span>Migration</button>
+        <button type="button" class="side-link" data-alias="Team & Access"><span class="nav-symbol">♧</span>Team & Access</button>
+        <button type="button" class="side-link" data-alias="Pricing"><span class="nav-symbol">◇</span>Pricing</button>
+        <button type="button" class="side-link" data-alias="Data & Support"><span class="nav-symbol">♢</span>Data & Support</button>
+      </nav>
+      <div class="sidebar-bottom"><button class="theme-button" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme" type="button">☾</button></div>
+    </aside>
+    <div class="page-frame">
+      <header class="top-breadcrumb">
+        <button type="button" id="sidebar-toggle" class="breadcrumb-button" aria-label="Toggle sidebar">◫</button>
+        <span class="breadcrumb-divider"></span>
+        <span id="breadcrumb-parent">Publishing</span><span class="breadcrumb-arrow" id="breadcrumb-arrow">›</span><strong id="breadcrumb-current">Platform Customization</strong>
+        <div class="header-right"><a class="gallery-return" href="./index.html">← Design Gallery</a><button class="header-pages" type="button" id="screens-toggle" aria-expanded="false">4 screens <span>⌄</span></button></div>
+        <div class="screens-menu" id="screens-menu" hidden>
+          <a href="?screen=media" data-screen="media">01 · Media customization</a>
+          <a href="?screen=title" data-screen="title">02 · AI title generation</a>
+          <a href="?screen=analysis" data-screen="analysis">03 · Chart explanations</a>
+          <a href="?screen=chat" data-screen="chat">04 · Fey AI chat</a>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="intro" id="intro">
+          <h1 id="page-title">Media</h1>
+          <p id="page-subtitle">Use one video everywhere, or upload a separate video for YouTube, Spotify or the RSS feed. You can also upload a separate audio file for audio-only apps or use audio extracted from the video.</p>
+        </section>
+
+        <section class="episode-shell" id="episode-shell" aria-label="Episode interface demo">
+          <div class="episode-side-icons"><div class="tiny-brand">♢</div><span></span><span></span><span></span></div>
+          <div class="episode-main">
+            <div class="episode-heading" id="episode-heading">My Episode</div>
+            <div class="episode-tabs" id="episode-tabs">
+              <button type="button" data-episode-tab="overview">Overview</button>
+              <button type="button" data-episode-tab="content" class="selected">Content</button>
+              <button type="button" data-episode-tab="analytics">Analytics</button>
+              <button type="button" data-episode-tab="adslots">Ad Slots</button>
+              <button type="button" data-episode-tab="transcript">Transcript</button>
+            </div>
+            <div class="episode-body" id="episode-body"></div>
+          </div>
+        </section>
+        <aside class="floating-panel" id="floating-panel" aria-label="Platform options"></aside>
+        <p class="demo-footnote">Interactive design recreation · Local files and sample analytics only. No real publishing or AI service connected.</p>
+      </main>
+    </div>
+  </div>
+  <input type="file" id="hidden-upload" hidden>
+  <div id="toast" role="status" aria-live="polite" class="toast"></div>
+</body>
+</html>

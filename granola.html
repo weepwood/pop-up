@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#eeeeee">
+  <meta name="description" content="An interactive reconstruction of three Granola-style workspace sidebar states: Home, workspace switcher and Activity.">
+  <title>Workspace sidebar · pop-up UI Collection</title>
+  <link rel="stylesheet" href="granola.css">
+  <script src="granola.js" defer></script>
+</head>
+<body>
+  <main class="showcase">
+    <div class="topbar">
+      <a class="back-link" href="./index.html" aria-label="Back to design gallery">← <span>All designs</span></a>
+      <span class="showcase-name">WORKSPACE SIDEBAR <span class="tiny-dot">·</span> INTERACTIVE STUDY</span>
+      <button type="button" class="reset-link" id="reset-demo">Reset demo ↺</button>
+    </div>
+    <div class="stage" id="stage" aria-label="Three interactive workspace sidebar states">
+      <section class="rail-panel" data-pane="0" aria-label="Home sidebar preview"></section>
+      <section class="rail-panel" data-pane="1" aria-label="Workspace menu preview"></section>
+      <section class="rail-panel" data-pane="2" aria-label="Activity sidebar preview"></section>
+    </div>
+    <p class="hint">Each panel is interactive. Select a workspace, switch between Home and Activity, search, or create a local demo item. <span>Not affiliated with Granola.</span></p>
+    <div class="toast" role="status" aria-live="polite" id="toast"></div>
+  </main>
+  <noscript><p style="padding:30px;text-align:center">Enable JavaScript to explore the interactive sidebar study.</p></noscript>
+</body>
+</html>

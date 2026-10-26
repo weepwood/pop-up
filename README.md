@@ -8,7 +8,7 @@
 
 | 页面 | 路由 | 功能 |
 | --- | --- | --- |
-| UI Gallery | `index.html` | 7 个页面入口、分类筛选、关键词搜索、卡片预览 |
+| UI Gallery | `index.html` | 8 个页面入口、分类筛选、关键词搜索、卡片预览 |
 | Install Homepage pop-up | `install.html` | 脚本/内嵌/分享三种安装方式，代码复制与引导 |
 | Create campaign | `newsletter.html?screen=campaign` | 4 步邮件活动向导和本地草稿 |
 | Add subscribers | `newsletter.html?screen=subscribers` | 邮箱验证、批量录入和标签 |
@@ -16,8 +16,9 @@
 | Create offer | `newsletter.html?screen=offer` | 优惠折扣、价格实时预览 |
 | Storefront demo | `demo-site.html` | 用于测试订阅弹窗的示例商店 |
 | Share link form | `share.html` | 直接访问的订阅表单页面 |
+| Granola workspace sidebar | `granola.html` | 3 栏侧边栏 Home / Workspace / Activity 交互复刻 |
 
-> 首页共展示 7 个交互界面入口（安装弹窗 + Newsletter 四个页面 + 2 个演示页面）。`newsletter.html` 的 4 个入口通过 `screen` 查询参数切换状态。
+> 首页共展示 8 个交互界面入口（安装弹窗 + Newsletter 四个页面 + 2 个演示页面 + Granola 风格侧栏）。`newsletter.html` 的 4 个入口通过 `screen` 查询参数切换状态。
 
 ### 快速运行
 
@@ -29,10 +30,11 @@ python -m http.server 5173
 
 ### 项目文件
 
-- `index.html` / `gallery.css` / `gallery.js`：作品首页及筛选。
+- `index.html` / `gallery.css` / `gallery.js`：作品首页及筛选，`granola-preview.css` 为侧栏缩略图。
 - `install.html` / `styles.css` / `main.js`：安装弹窗。
 - `newsletter.html` / `newsletter.css` / `newsletter.js`：四个 Newsletter UI。
 - `demo-site.html` / `share.html` / `forms/v2.js`：本地演示订阅流程。
+- `granola.html` / `granola.css` / `granola.js`：Granola 风格 Home / Workspace menu / Activity 三栏交互原型。
 - `scripts/check_local_links.py`：自动验证所有静态页面及首页入口。
 - `.github/workflows/deploy.yml`：GitHub Actions 自动部署 GitHub Pages。
 
@@ -117,3 +119,7 @@ python -m http.server 5173
 支持桌面与手机、键盘交互，数据写入浏览器 `localStorage`，**不连接真实邮件发送、付款或订阅后台**。X 页面直连限制了原图获取，复刻依据公开收录页的逐张描述和配色信息，未宣称逐像素一致。
 
 部署：`.github/workflows/deploy.yml` 在 `main` 分支推送时自动部署全站到 GitHub Pages，同时验证本页面所需资源和 JavaScript 语法。
+
+## Granola 风格侧栏复刻
+
+源于用户提供的三态工作区侧栏设计图：左 Home、中央工作区切换下拉列表、右 Activity。项目提供 `granola.html` 独立交互演示页面，从首页「Sidebars」分类可以进入。演示可切换 Home/Activity、工作区、导航项目，支持搜索、创建本地聊天与活动、读取未读状态、Esc 关闭和 Ctrl/Cmd+K 搜索。状态在本地浏览器存储，不连接 Granola 官方服务，也不使用其商标资源。

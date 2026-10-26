@@ -95,6 +95,8 @@
     }
     visibleCount.textContent = String(count).padStart(2, "0");
     empty.hidden = count !== 0;
+    empty.querySelector("h3").textContent = currentFilter === "favorites" && !search.value.trim() ? "No saved studies yet" : "No interfaces found";
+    empty.querySelector("p").textContent = currentFilter === "favorites" && !search.value.trim() ? "Use the bookmark icon on any card to build your own shortlist." : "Try another keyword, or return to the full collection.";
   }
 
   function selectFilter(value) {
@@ -123,6 +125,7 @@
       const result = document.createElement("button");
       result.type = "button";
       result.className = "command-result" + (index === selectedCommandIndex ? " selected" : "");
+      result.id = "command-option-" + index;
       result.setAttribute("role", "option");
       result.setAttribute("aria-selected", String(index === selectedCommandIndex));
       result.innerHTML = '<span class="result-mark" aria-hidden="true">✳</span><span class="result-copy"><strong></strong><small></small></span><span class="result-arrow" aria-hidden="true">↗</span>';
@@ -131,6 +134,7 @@
       result.addEventListener("click", () => { location.href = entry.href; });
       commandResults.append(result);
     });
+    commandInput.setAttribute("aria-activedescendant", "command-option-" + selectedCommandIndex);
   }
 
   function openCommand() {

@@ -1,0 +1,63 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Validate and package static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          set -euo pipefail
+          for file in index.html demo-site.html share.html styles.css main.js forms/v2.js; do
+            test -s "$file" || { echo "::error file=$file::Required file missing or empty"; exit 1; }
+          done
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check main.js
+          node --check forms/v2.js
+
+      - name: Prepare Pages directory
+        run: |
+          mkdir -p _site/forms
+          cp index.html demo-site.html share.html styles.css main.js _site/
+          cp forms/v2.js _site/forms/
+          touch _site/.nojekyll
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy static site
+        id: deployment
+        uses: actions/deploy-pages@v4

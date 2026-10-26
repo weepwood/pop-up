@@ -1,6 +1,6 @@
 # pop-up · UI Design Collection
 
-基于 HTML、CSS 和 JavaScript 的交互式 UI 复刻作品集，支持 GitHub Pages 自动部署。首页现为 **统一作品导航页**，原安装弹窗保留在独立地址，所有页面均可从首页进入。
+基于 HTML、CSS 和 JavaScript 的交互式 UI 复刻作品集（首页已升级为 2026 编辑式设计目录），支持 GitHub Pages 自动部署。首页现为 **统一作品导航页**，原安装弹窗保留在独立地址，所有页面均可从首页进入。
 
 **在线体验**：[作品导航](https://weepwood.github.io/pop-up/) · [安装弹窗](https://weepwood.github.io/pop-up/install.html) · [Newsletter 设计](https://weepwood.github.io/pop-up/newsletter.html)
 
@@ -133,3 +133,14 @@ python -m http.server 5173
 来自用户提供的四张 Flightcast UI 截图，独立入口为 [flightcast.html](https://weepwood.github.io/pop-up/flightcast.html)。使用原生 HTML/CSS/JavaScript 复刻导航、布局、平台设置卡片和浮层；通过 URL 参数 `screen=media|title|analysis|chat` 切换四个截图场景。
 
 可用交互：平台 override 开关、选取/拖入本地媒体文件、标题建议左右切换/采纳/跳过、章节编辑、播客样例留存曲线、CSV 示例导出、图表解析、聊天问题与预设回复、亮暗主题、返回作品首页。文件内容不会上传到服务器；仅记录选择的文件名与大小。AI 文字和数据均为本地示例，不代表实时或真实服务。`flightcast-preview.css` 为首页展示缩略卡片。项目不隶属于 Flightcast。
+
+## 2026 作品首页设计升级
+
+新首页由 `index.html`、`gallery-v2.css`、`gallery-v2.js` 实现（无需构建和安装依赖）。
+
+- 设计原则：统一中性色设计 Token、一处克制的紫色强调、增强字体与留白层级、让 HTML/CSS 微缩模型代替图片和繁重动画。
+- 可用交互：筛选 Modals / Dashboards / Sidebars / Demos；浏览器内收藏（Saved）；网格/列表切换；亮/暗色模式；搜索框；Cmd/Ctrl+K 快速查找、上下键切换、回车打开；按 / 快速聚焦搜索。
+- 兼容：移动端单列、键盘焦点、减少动效偏好，收藏与主题使用 localStorage（无云端同步）。
+- 原 `gallery.css`、`gallery.js`、`granola-preview.css`、`flightcast-preview.css` 暂时保留供追溯，但不再由首页加载；各演示页面不受影响。
+
+设计来源和取舍见 [DESIGN_REFERENCES.md](DESIGN_REFERENCES.md)。

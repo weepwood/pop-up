@@ -23,7 +23,7 @@ jobs:
       - name: Check required files
         run: |
           set -euo pipefail
-          for file in index.html demo-site.html share.html styles.css main.js forms/v2.js; do
+          for file in index.html demo-site.html share.html styles.css main.js forms/v2.js newsletter.html newsletter.css newsletter.js; do
             test -s "$file" || { echo "::error file=$file::Required file missing or empty"; exit 1; }
           done
 
@@ -31,11 +31,12 @@ jobs:
         run: |
           node --check main.js
           node --check forms/v2.js
+          node --check newsletter.js
 
       - name: Prepare Pages directory
         run: |
           mkdir -p _site/forms
-          cp index.html demo-site.html share.html styles.css main.js _site/
+          cp index.html demo-site.html share.html newsletter.html styles.css newsletter.css main.js newsletter.js _site/
           cp forms/v2.js _site/forms/
           touch _site/.nojekyll
 

@@ -186,7 +186,7 @@
     const el=$("#publishing-subnav");el.hidden=!el.hidden;$("#publishing-toggle").setAttribute("aria-expanded",String(!el.hidden));
   });
   $("#screens-toggle").addEventListener("click",()=>{menuOpen=!menuOpen;$("#screens-menu").hidden=!menuOpen;$("#screens-toggle").setAttribute("aria-expanded",String(menuOpen));});
-  $("#sidebar-toggle").addEventListener("click",()=>{const root=$("#app-shell");root.classList.toggle("sidebar-collapsed");root.classList.toggle("mobile-open",!root.classList.contains("sidebar-collapsed"));});
+  $("#sidebar-toggle").addEventListener("click",()=>{const root=$("#app-shell");if(window.matchMedia("(max-width:850px)").matches){root.classList.remove("sidebar-collapsed");root.classList.toggle("mobile-open");}else{root.classList.remove("mobile-open");root.classList.toggle("sidebar-collapsed");}});
   $("#theme-toggle").addEventListener("click",()=>{state.theme=state.theme==="dark"?"light":"dark";save();render();});
   $("#hidden-upload").addEventListener("change",e=>recordFile(e.target.dataset.target,e.target.files?.[0]));
   document.addEventListener("dragover",e=>{const z=e.target.closest(".dropzone");if(!z)return;e.preventDefault();z.classList.add("dragover");});

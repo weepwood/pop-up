@@ -51,3 +51,19 @@ python -m http.server 5173
 - 回到安装界面，观察检测状态。
 - 修改设置，确认代码中的 workspace / form 值同步变更。
 - 逐一测试安装教程、关闭、重新打开、Esc、方向键和窄屏布局。
+
+## Newsletter UI Collection（新增）
+
+访问 [`newsletter.html`](newsletter.html) 或 GitHub Pages 上的 `/newsletter.html`。主页安装弹窗的教程区也提供导航入口。
+
+本页面根据 [Jubayer 的 4 张 Newsletter UI 设计](https://x.com/jubayer6910/status/2114634027147923544) 进行重构，采用独立的 `newsletter.html`、`newsletter.css`、`newsletter.js`，不影响原安装弹窗。
+
+四个可切换界面：
+- **Create campaign**：格式卡片、4 步向导、活动草稿保存；
+- **Add subscribers**：单人录入、批量粘贴、CSV 文件选择、标签、邮箱验证和去重、欢迎邮件与双重验证开关；
+- **Import subscribers**：读取 CSV（含带引号的字段）、字段自动匹配与修改、无效日期提示、导入复核、确认后保存；默认提供 80 行演示数据，其中 18 行日期异常；
+- **Create offer**：百分比或金额折扣、期限/资格/优惠码、实时价格预览、分享链接复制与本地保存。
+
+支持桌面与手机、键盘交互，数据写入浏览器 `localStorage`，**不连接真实邮件发送、付款或订阅后台**。X 页面直连限制了原图获取，复刻依据公开收录页的逐张描述和配色信息，未宣称逐像素一致。
+
+部署：`.github/workflows/deploy.yml` 在 `main` 分支推送时自动部署全站到 GitHub Pages，同时验证本页面所需资源和 JavaScript 语法。

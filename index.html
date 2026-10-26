@@ -1,155 +1,132 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f0f0f0">
-  <meta name="description" content="Explore interactive UI recreations: installation dialogs, campaign flows, subscriber forms, CSV imports and offer previews.">
-  <title>pop-up — UI Design Collection</title>
-  <link rel="stylesheet" href="gallery.css">
-  <link rel="stylesheet" href="granola-preview.css">
-  <link rel="stylesheet" href="flightcast-preview.css">
-  <script src="gallery.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f7f5">
+<meta name="description" content="pop-up — a living collection of 12 interactive interface studies, from nuanced dialogs to analytical dashboards.">
+<title>pop-up / An interface collection</title>
+<link rel="stylesheet" href="gallery-v2.css">
+<script src="gallery-v2.js" defer></script>
 </head>
 <body>
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="site-brand" href="./" aria-label="pop-up home"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>pop-up<span class="brand-sub"> / collection</span></span></a>
-      <nav class="top-links" aria-label="Main navigation">
-        <a class="active" href="./" aria-current="page">Gallery</a>
-        <a href="install.html">Install UI</a>
-        <a href="newsletter.html">Newsletter</a><a href="granola.html">Sidebar UI</a><a href="flightcast.html?screen=media">Flightcast</a>
-        <a class="github-link" href="https://github.com/weepwood/pop-up" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-      </nav>
-    </header>
-
-    <main id="main-content">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-kicker"><span class="kicker-line"></span> THE INTERACTION COLLECTION <span class="issue-id">№ 001—012</span></div>
-        <div class="hero-main">
-          <div class="hero-copy"><h1 id="hero-title">Small interfaces.<br><em>Thoughtful details.</em></h1><p>A growing library of carefully recreated modal interfaces. Explore each screen, interact with real controls, and discover how every detail works.</p><a class="hero-cta" href="#explore">Explore the collection <span aria-hidden="true">↘</span></a></div>
-          <div class="hero-illustration" aria-hidden="true">
-            <div class="float-dots"><i></i><i></i><i></i></div>
-            <div class="art-card art-back"><div class="art-band"></div><div class="art-line short"></div><div class="art-line"></div><div class="art-line"></div></div>
-            <div class="art-card art-front"><div class="art-picto">✳</div><div class="art-line heading"></div><div class="art-line"></div><div class="art-line half"></div><div class="art-pills"><b></b><b></b></div><div class="art-cta"></div></div>
-            <span class="art-glow"></span>
-          </div>
+<a class="skip-link" href="#collection">Skip to collection</a>
+<div class="site">
+  <header class="site-header">
+    <a href="./" class="logotype" aria-label="pop-up home"><span class="logo-glyph">✳</span><span>pop-up</span><span class="logo-divider"></span><span class="logo-caption">interface archive</span></a>
+    <nav class="primary-nav" aria-label="Main">
+      <a class="current" href="#collection" aria-current="page">Collection</a>
+      <a href="#about">About</a>
+      <a href="https://github.com/weepwood/pop-up" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="top-search" id="open-command" aria-label="Open quick search"><span class="search-glyph">⌕</span><span>Quick find</span><kbd>⌘ K</kbd></button>
+      <button class="theme-button" id="theme-button" aria-label="Switch to dark mode" title="Toggle theme" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 16.8A8.5 8.5 0 0 1 7.2 4 8.5 8.5 0 1 0 20 16.8Z"/></svg></button>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-main">
+        <div class="hero-content">
+          <div class="overline"><span class="signal"></span> INDEPENDENT DESIGN STUDIES <span class="overline-separator">/</span> VOL. 001</div>
+          <h1 id="hero-heading">Interfaces worth<br><em>looking closer at.</em></h1>
+          <p>A quiet archive of remarkable UI patterns — reconstructed with real HTML, CSS and JavaScript. Study the details. Try the interactions. Make them your own.</p>
+          <div class="hero-actions"><a href="#collection" class="primary-cta">Explore the collection <span>↗</span></a><a href="https://github.com/weepwood/pop-up" class="quiet-cta" target="_blank" rel="noopener noreferrer">View source <span>↗</span></a></div>
         </div>
-        <div class="hero-stats"><div><strong>12</strong><span>Interactive screens</span></div><div><strong>04</strong><span>Design collections</span></div><div><strong>100%</strong><span>Browser-based demos</span></div><div class="hero-note">Built with HTML, CSS & JavaScript.<br>No framework required.</div></div>
-      </section>
-
-      <section class="collection" id="explore" aria-labelledby="collection-title">
-        <div class="section-header"><div><div class="eyebrow">EXPLORE / ALL DESIGNS</div><h2 id="collection-title">The collection <span class="count" id="visible-count">12</span></h2></div><p>Click any card to open a full interactive preview.</p></div>
-        <div class="gallery-toolbar">
-          <div class="filter-group" role="group" aria-label="Filter designs">
-            <button type="button" class="filter active" data-filter="all" aria-pressed="true">All designs <span>12</span></button>
-            <button type="button" class="filter" data-filter="modal" aria-pressed="false">Modal dialogs <span>05</span></button>
-            <button type="button" class="filter" data-filter="sidebar" aria-pressed="false">Sidebars <span>01</span></button><button type="button" class="filter" data-filter="dashboard" aria-pressed="false">Dashboards <span>04</span></button>
-            <button type="button" class="filter" data-filter="demo" aria-pressed="false">Live demos <span>02</span></button>
-          </div>
-          <label class="search-field"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="sr-only">Search designs</span><input type="search" id="search" placeholder="Find a design…" autocomplete="off" aria-controls="card-grid"></label>
+        <div class="hero-aside" aria-hidden="true">
+          <div class="showcase-back"><span class="window-dots">● ● ●</span><span class="back-head"></span><span class="back-line"></span><span class="back-line short"></span><div class="back-grid"><span></span><span></span><span></span></div></div>
+          <div class="showcase-front"><div class="showcase-top"><span class="showcase-identity"><i>✳</i> Interface / 001</span><span>•••</span></div><div class="showcase-chart"><span class="sample-caption">A study of meaningful details</span><svg viewBox="0 0 280 108" fill="none" aria-hidden="true"><path d="M0 90H280M0 60H280M0 30H280" stroke="currentColor" opacity=".12"/><path d="M3 82L29 75L47 77L73 56L95 61L116 37L138 45L166 17L191 32L217 19L246 29L278 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="showcase-bottom"><span>12 thoughtful interfaces</span><span class="showcase-arrow">↗</span></div></div>
+          <div class="floating-note"><span class="floating-star">✦</span><span>Details make<br>the difference.</span></div>
         </div>
-
-        <div class="card-grid" id="card-grid">
-          <a href="install.html" class="design-card card-featured" data-category="modal" data-search="install homepage popup script inline embed share link copy code harbor" aria-label="Open Install Homepage pop-up">
-            <div class="card-visual install-visual">
-              <div class="mock-window install-window"><div class="mock-title"><span class="mock-app-icon coral">{··}</span><span><b>Install Homepage pop-up</b><small>Add this once to your website.</small></span><i>×</i></div><div class="mock-tabs"><span class="on">Pop-up script</span><span>Inline embed</span><span>Share link</span></div><div class="mock-code"><div class="code-top"><span>HTML <i>· 6 lines</i></span><span class="copied">✓ Copied</span></div><code><span class="code-grey">&lt;!-- signup form --&gt;</span><br>&lt;script <span class="code-blue">async</span><br>&nbsp; src=<span class="code-blue">"forms/v2.js"</span><br>&nbsp; data-form=<span class="code-blue">"homepage-popup"</span>&gt;<br>&lt;/script&gt;</code></div><div class="mock-success"><span>✓</span><div><b>Detected on your website</b><small>Connected successfully</small></div></div></div>
-            </div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">01 / INSTALLATION</span><span class="pill-tag">3 tabs</span></div><div class="card-heading"><h3>Install Homepage pop-up</h3><span class="card-arrow" aria-hidden="true">↗</span></div><p>A precise installation dialog with code snippets, copy actions, setup guides and status feedback.</p><span class="interaction-tags"><span>Code copy</span><span>Tab switch</span><span>Settings</span></span></div>
-          </a>
-
-          <a href="newsletter.html?screen=campaign" class="design-card" data-category="modal" data-search="create campaign newsletter details audience content review format issue" aria-label="Open Create campaign">
-            <div class="card-visual purple-visual"><div class="mini-modal"><div class="mini-heading"><span class="mini-icon lavender">✧</span><span><b>Create campaign</b><small>Bring your next edition to life</small></span><i>×</i></div><div class="mini-steps"><span class="step-active">① Details</span><span>② Audience</span><span>③ Content</span></div><div class="mini-label">Campaign format</div><div class="mini-options"><div class="choice active"><span>▤</span><b>Newsletter</b></div><div class="choice"><span>◈</span><b>Announcement</b></div></div><div class="mini-label">Campaign name</div><div class="fake-input">The Creator Brief — October</div><div class="mini-footer"><span>Saved as a draft</span><b>Continue →</b></div></div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">02 / NEWSLETTER</span><span class="pill-tag purple">4 steps</span></div><div class="card-heading"><h3>Create campaign</h3><span class="card-arrow" aria-hidden="true">↗</span></div><p>Choose a campaign type, configure the audience and create your newsletter draft.</p><span class="interaction-tags"><span>Step wizard</span><span>Draft saving</span></span></div>
-          </a>
-
-          <a href="newsletter.html?screen=subscribers" class="design-card" data-category="modal" data-search="add subscribers email contacts paste list subscription tag welcome" aria-label="Open Add subscribers">
-            <div class="card-visual pink-visual"><div class="mini-modal"><div class="mini-heading"><span class="mini-icon lavender">♙</span><span><b>Add subscribers</b><small>Grow your reader community</small></span><i>×</i></div><div class="mini-segments"><span class="active">Single subscriber</span><span>Paste list</span><span>Import CSV</span></div><div class="mini-label">Email address</div><div class="fake-input">alex@example.com</div><div class="mini-row"><div><div class="mini-label">First name</div><div class="fake-input">Alex</div></div><div><div class="mini-label">Last name</div><div class="fake-input">Morgan</div></div></div><div class="mini-toggle-row">Send welcome email <span class="mini-toggle"></span></div><div class="mini-footer"><span>Local demo</span><b>Add subscriber →</b></div></div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">03 / NEWSLETTER</span><span class="pill-tag purple">3 methods</span></div><div class="card-heading"><h3>Add subscribers</h3><span class="card-arrow" aria-hidden="true">↗</span></div><p>Collect new readers through email entry, bulk paste and tagging, with built-in validation.</p><span class="interaction-tags"><span>Validation</span><span>Bulk entry</span></span></div>
-          </a>
-
-          <a href="newsletter.html?screen=import" class="design-card" data-category="modal" data-search="import subscribers csv upload map columns review records matching" aria-label="Open Import subscribers">
-            <div class="card-visual mint-visual"><div class="mini-modal"><div class="mini-heading"><span class="mini-icon lavender">⇧</span><span><b>Import subscribers</b><small>Match each column to a field</small></span><i>×</i></div><div class="mini-steps"><span class="complete">✓ Upload</span><span class="step-active">② Map columns</span><span>③ Review</span></div><div class="mini-file"><span>CSV</span><div><b>subscribers.csv</b><small>80 rows · 5 columns</small></div></div><div class="mini-table"><div class="th"><span>Column</span><span>Map to</span><span>Status</span></div><div><span>email</span><span class="mapped">Email⌄</span><span class="success">✓</span></div><div><span>first_name</span><span class="mapped">First name⌄</span><span class="success">✓</span></div><div><span>joined_at</span><span class="mapped">Signup date⌄</span><span class="warn">!</span></div></div><div class="mini-warning">! &nbsp; 18 rows have unreadable dates</div></div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">04 / NEWSLETTER</span><span class="pill-tag purple">CSV</span></div><div class="card-heading"><h3>Import subscribers</h3><span class="card-arrow" aria-hidden="true">↗</span></div><p>A guided import flow with smart field mapping, error handling and a review step.</p><span class="interaction-tags"><span>Upload CSV</span><span>Column mapping</span></span></div>
-          </a>
-
-          <a href="newsletter.html?screen=offer" class="design-card" data-category="modal" data-search="create offer discount percentage amount promotion price preview offer code" aria-label="Open Create offer">
-            <div class="card-visual lilac-visual"><div class="mini-modal mini-offer"><div class="mini-heading"><span class="mini-icon lavender">◇</span><span><b>Create offer</b><small>Reward your newest readers</small></span><i>×</i></div><div class="mini-offer-body"><div class="offer-controls"><div class="mini-label">Discount type</div><div class="fake-input">Percentage off⌄</div><div class="mini-label">Discount value</div><div class="fake-input">30 %</div><div class="mini-label">Offer code</div><div class="fake-input">WELCOME30</div></div><div class="offer-price"><span>30% OFF</span><b>$3.50</b><small>/ month</small><div>Subscribe & save →</div></div></div></div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">05 / NEWSLETTER</span><span class="pill-tag purple">Live preview</span></div><div class="card-heading"><h3>Create offer</h3><span class="card-arrow" aria-hidden="true">↗</span></div><p>Build subscription offers with adjustable discounts and a preview that updates instantly.</p><span class="interaction-tags"><span>Price calculator</span><span>Share link</span></span></div>
-          </a>
-
-          <a href="demo-site.html" class="design-card" data-category="demo" data-search="demo storefront harbor and co popup subscription store live website" aria-label="Open Storefront demo">
-            <div class="card-visual store-visual"><div class="store-preview"><div class="store-head"><span>HARBOR & CO.</span><span>Home &nbsp; Collection &nbsp; Journal</span></div><div class="store-main"><div><small>SIMPLE, TIMELESS OBJECTS</small><strong>Make room for<br>beautiful living.</strong><span>Discover everyday essentials →</span></div><div class="store-flower">✿</div></div></div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">06 / LIVE EXAMPLE</span><span class="pill-tag green">Interactive</span></div><div class="card-heading"><h3>Storefront demo</h3><span class="card-arrow" aria-hidden="true">↗</span></div><p>See the working sign-up widget installed on a sample storefront.</p><span class="interaction-tags"><span>Popup trigger</span><span>Form submit</span></span></div>
-          </a>
-
-          <a href="share.html" class="design-card" data-category="demo" data-search="share subscription standalone signup link form subscribe newsletter" aria-label="Open Share link form">
-            <div class="card-visual share-visual"><div class="share-preview"><div class="share-mark">HARBOR & CO.</div><div class="share-card"><span>✳</span><strong>A little something<br>for your inbox.</strong><p>Fresh ideas, special offers and more.</p><div class="share-input">Your email address</div><div class="share-btn">Subscribe →</div></div></div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">07 / LIVE EXAMPLE</span><span class="pill-tag green">Standalone</span></div><div class="card-heading"><h3>Share link form</h3><span class="card-arrow" aria-hidden="true">↗</span></div><p>A standalone sign-up experience with email validation and success feedback.</p><span class="interaction-tags"><span>Subscribe</span><span>Shareable URL</span></span></div>
-          </a>
-
-          <a href="granola.html" class="design-card card-featured granola-card" data-category="sidebar" data-search="granola workspace sidebar navigation home activity dropdown menu search projects chats skills ramp vercel stripe perplexity" aria-label="Open Granola workspace sidebar">
-            <div class="card-visual granola-visual">
-              <div class="granola-thumbnails" aria-hidden="true">
-                <div class="granola-mini">
-                  <div class="granola-mini-top"><span class="granola-mark">◎</span><b>Granola</b><span class="granola-up">⌃</span><span class="granola-mini-search">⌕</span></div>
-                  <div class="granola-mini-tabs"><span class="on">Home</span><span>Activity</span></div>
-                  <div class="granola-mini-nav"><span>⊕ &nbsp; AI Agent</span><span>▤ &nbsp; Sheets</span><span>▢ &nbsp; Documents</span><span>▥ &nbsp; Analytics</span><span class="sel">ϟ &nbsp; Skills</span><span>··· &nbsp; More</span></div>
-                  <div class="granola-mini-heading">Projects</div><div class="granola-mini-project">▱ &nbsp; Client Growth</div><div class="granola-mini-project">▱ &nbsp; Product Launch</div>
-                </div>
-                <div class="granola-mini">
-                  <div class="granola-mini-top"><span class="granola-mark">◎</span><b>Granola</b><span class="granola-up">⌃</span><span class="granola-mini-search">⌕</span></div>
-                  <div class="granola-mini-dropdown"><span><i class="granola-mark">◎</i> Granola <b>✓</b></span><span><i class="ramp-mark">↗</i> Ramp</span><span><i class="vercel-mark">▲</i> Vercel</span><span><i class="stripe-mark">▰</i> Stripe</span><span><i class="perp-mark">✳</i> Perplexity</span><hr><span class="sub">☷ &nbsp; Invite members</span><span class="sub">ⓘ &nbsp; Support</span></div>
-                </div>
-                <div class="granola-mini">
-                  <div class="granola-mini-top"><span class="granola-mark">◎</span><b>Granola</b><span class="granola-up">⌃</span><span class="granola-mini-search">⌕</span></div>
-                  <div class="granola-mini-tabs"><span>Home</span><span class="on">Activity</span></div>
-                  <div class="granola-mini-heading first">Urgent</div>
-                  <div class="granola-mini-activity">Approve 3 changes<i class="orange"></i></div>
-                  <div class="granola-mini-activity">Protect CPA or push?<i class="orange"></i></div>
-                  <div class="granola-mini-activity">GA4 disconnected<i class="orange"></i></div>
-                  <div class="granola-mini-heading">Deliverables</div>
-                  <div class="granola-mini-activity">▤ &nbsp; Project Brief<i></i></div>
-                  <div class="granola-mini-activity">▥ &nbsp; Monthly Analytics<i></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">08 / WORKSPACE SIDEBAR</span><span class="pill-tag">3 states</span></div><div class="card-heading"><h3>Granola-style workspace</h3><span class="card-arrow" aria-hidden="true">↗</span></div><p>Three beautifully restrained sidebar states: Home navigation, workspace switcher and Activity feed, all interactive.</p><span class="interaction-tags"><span>Workspace menu</span><span>Search</span><span>Activity feed</span><span>Local demo</span></span></div>
-          </a>
-
-          <a href="flightcast.html?screen=media" class="design-card" data-category="dashboard" data-search="flightcast media platform customization podcast dashboard">
-            <div class="card-visual flightcast-visual"><div class="fc-mock">
-              <aside><strong>♢ Flightcast</strong><span>Overview</span><span>Publishing</span><span>Platform Customization</span><span>AI Generation</span><span>✧ AI Insights</span><span>Analytics</span></aside>
-              <div class="fc-area"><header>Publishing › Platform customization</header><div class="fc-inner"><h4>Media</h4><small>Upload video for YouTube, Spotify and RSS</small><div class="fc-episode"><strong>My Episode</strong><div class="fc-tabs">Overview &nbsp; Content &nbsp; <b>Media</b></div><div class="fc-box">⇧<br>Select or drop video</div></div></div><div class="fc-pop"><strong>Custom Media</strong><p>Choose platform specific video</p><div class="fc-pop-row">🔴 YouTube <b>●</b></div><div class="fc-placeholder">⇧  Select or drop video</div><div class="fc-pop-row">🟢 Spotify <span>●</span></div><div class="fc-pop-row">🟠 RSS Feed <span>●</span></div></div></div>
-            </div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">09 / FLIGHTCAST</span><span class="pill-tag purple">Media</span></div><div class="card-heading"><h3>Platform customization</h3><span class="card-arrow">↗</span></div><p>Upload video for YouTube, Spotify and RSS. Open the full interactive reproduction.</p><span class="interaction-tags"><span>Dashboard</span><span>Interactive</span></span></div>
-          </a>
-          <a href="flightcast.html?screen=title" class="design-card" data-category="dashboard" data-search="flightcast title ai title generation podcast dashboard">
-            <div class="card-visual flightcast-visual"><div class="fc-mock">
-              <aside><strong>♢ Flightcast</strong><span>Overview</span><span>Publishing</span><span>Platform Customization</span><span>AI Generation</span><span>✧ AI Insights</span><span>Analytics</span></aside>
-              <div class="fc-area"><header>Publishing › AI title generation</header><div class="fc-inner"><h4>Title</h4><small>Edit the episode title and chapters</small><div class="fc-episode"><strong>My Episode</strong><div class="fc-tabs">Overview &nbsp; Content &nbsp; <b>Title</b></div><div class="fc-box">⇧<br>Select or drop video</div></div></div><div class="fc-pop"><strong>Custom Title</strong><p>Browse 10 generated titles</p><div class="fc-pop-row">🔴 YouTube <b>●</b></div><div class="fc-placeholder">Discipline Expert: The Habit That Will Make Or Break Your Entire 2026!</div><div class="fc-pop-row">🟢 Spotify <span>●</span></div><div class="fc-pop-row">🟠 RSS Feed <span>●</span></div></div></div>
-            </div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">10 / FLIGHTCAST</span><span class="pill-tag purple">Title</span></div><div class="card-heading"><h3>AI title generation</h3><span class="card-arrow">↗</span></div><p>Edit the episode title and chapters. Open the full interactive reproduction.</p><span class="interaction-tags"><span>Dashboard</span><span>Interactive</span></span></div>
-          </a>
-          <a href="flightcast.html?screen=analysis" class="design-card" data-category="dashboard" data-search="flightcast analysis chart explanations podcast dashboard">
-            <div class="card-visual flightcast-visual"><div class="fc-mock">
-              <aside><strong>♢ Flightcast</strong><span>Overview</span><span>Publishing</span><span>Platform Customization</span><span>AI Generation</span><span>✧ AI Insights</span><span>Analytics</span></aside>
-              <div class="fc-area"><header>Publishing › Chart explanations</header><div class="fc-inner"><h4>Retention</h4><small>Compare retention on Spotify and YouTube</small><div class="fc-episode"><strong>My Episode</strong><div class="fc-tabs">Overview &nbsp; Content &nbsp; <b>Retention</b></div><div class="fc-box"><svg viewBox="0 0 170 70"><polyline fill="none" stroke="#34a853" stroke-width="2" points="0,10 30,28 60,35 90,32 115,51 145,49 170,63"/><polyline fill="none" stroke="#f44343" stroke-width="2" points="0,12 30,33 60,50 90,57 115,59 145,64 170,68"/></svg></div></div></div><div class="fc-pop"><strong>Fey AI analysis</strong><p>Overview · Insights · Suggestions</p><div class="fc-pop-row">🔴 YouTube <b>●</b></div><div class="fc-placeholder">Spotify holds its audience much longer</div><div class="fc-pop-row">🟢 Spotify <span>●</span></div><div class="fc-pop-row">🟠 RSS Feed <span>●</span></div></div></div>
-            </div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">11 / FLIGHTCAST</span><span class="pill-tag purple">Retention</span></div><div class="card-heading"><h3>Chart explanations</h3><span class="card-arrow">↗</span></div><p>Compare retention on Spotify and YouTube. Open the full interactive reproduction.</p><span class="interaction-tags"><span>Dashboard</span><span>Interactive</span></span></div>
-          </a>
-          <a href="flightcast.html?screen=chat" class="design-card" data-category="dashboard" data-search="flightcast chat fey ai podcast assistant podcast dashboard">
-            <div class="card-visual flightcast-visual"><div class="fc-mock">
-              <aside><strong>♢ Flightcast</strong><span>Overview</span><span>Publishing</span><span>Platform Customization</span><span>AI Generation</span><span>✧ AI Insights</span><span>Analytics</span></aside>
-              <div class="fc-area"><header>Publishing › Fey AI podcast assistant</header><div class="fc-inner"><h4>Fey AI</h4><small>53.7K plays · sample analytics</small><div class="fc-episode"><strong>My Episode</strong><div class="fc-tabs">Overview &nbsp; Content &nbsp; <b>Fey AI</b></div><div class="fc-box"><svg viewBox="0 0 170 70"><polyline fill="none" stroke="#34a853" stroke-width="2" points="0,10 30,28 60,35 90,32 115,51 145,49 170,63"/><polyline fill="none" stroke="#f44343" stroke-width="2" points="0,12 30,33 60,50 90,57 115,59 145,64 170,68"/></svg></div></div></div><div class="fc-pop"><strong>My Podcast</strong><p>YouTube · Spotify · RSS</p><div class="fc-pop-row">🔴 YouTube <b>●</b></div><div class="fc-placeholder">How did my show do in the last 30 days?</div><div class="fc-pop-row">🟢 Spotify <span>●</span></div><div class="fc-pop-row">🟠 RSS Feed <span>●</span></div></div></div>
-            </div></div>
-            <div class="card-description"><div class="card-meta"><span class="design-number">12 / FLIGHTCAST</span><span class="pill-tag purple">Fey AI</span></div><div class="card-heading"><h3>Fey AI podcast assistant</h3><span class="card-arrow">↗</span></div><p>53.7K plays · sample analytics. Open the full interactive reproduction.</p><span class="interaction-tags"><span>Dashboard</span><span>Interactive</span></span></div>
-          </a>
+      </div>
+      <div class="hero-baseline"><div><strong>12</strong><span>interactive screens</span></div><div><strong>04</strong><span>design families</span></div><div><strong>0</strong><span>runtime dependencies</span></div><div class="baseline-date">Built as a study, not a product.<br>Every interaction is yours to explore.</div></div>
+    </section>
+    <section class="collection" id="collection" aria-labelledby="collection-heading">
+      <div class="section-intro"><div><div class="overline">THE INDEX <span class="overline-separator">/</span> SELECTED INTERFACES</div><h2 id="collection-heading">Explore the collection <span id="visible-count">12</span></h2></div><p>One detail at a time. Choose a study to see it come to life.</p></div>
+      <div class="collection-toolbar">
+        <div class="filters" role="group" aria-label="Filter design category">
+          <button type="button" class="filter active" data-filter="all" aria-pressed="true">All <span>12</span></button>
+          <button type="button" class="filter" data-filter="modal" aria-pressed="false">Modals <span>05</span></button>
+          <button type="button" class="filter" data-filter="dashboard" aria-pressed="false">Dashboards <span>04</span></button>
+          <button type="button" class="filter" data-filter="sidebar" aria-pressed="false">Sidebars <span>01</span></button>
+          <button type="button" class="filter" data-filter="demo" aria-pressed="false">Demos <span>02</span></button>
+          <button type="button" class="filter favorite-filter" data-filter="favorites" aria-pressed="false">Saved <span id="saved-count">0</span></button>
         </div>
-        <div class="empty-results" id="empty-results" hidden><span aria-hidden="true">⌕</span><h3>No matching designs</h3><p>Try a different keyword or category.</p><button type="button" id="reset-filters">Show all designs</button></div>
-      </section>
-    </main>
-    <footer class="site-footer"><span><span class="footer-mark">✳</span> pop-up / a personal interface collection</span><span>12 interactive screens · Static HTML / CSS / JavaScript</span><a href="https://github.com/weepwood/pop-up" target="_blank" rel="noopener noreferrer">Source code ↗</a></footer>
-  </div>
+        <div class="toolbar-right">
+          <label class="search-control"><span aria-hidden="true">⌕</span><span class="sr-only">Search interface studies</span><input id="search" type="search" placeholder="Search interfaces…" aria-controls="card-grid" autocomplete="off"></label>
+          <div class="view-switch" role="group" aria-label="Display layout"><button type="button" data-view="grid" class="active" aria-label="Grid view" aria-pressed="true">▦</button><button type="button" data-view="list" aria-label="List view" aria-pressed="false">☷</button></div>
+        </div>
+      </div>
+      <div class="card-grid" id="card-grid"><article class="piece piece-install featured" data-category="modal" data-search="homepage installation install modal a clear setup flow with installation methods, snippets and status feedback. code snippets 3 modes" data-id="install">
+  <a href="install.html" class="piece-link" aria-label="Open Homepage installation interactive demo">
+    <div class="piece-art tone-peach" aria-hidden="true"><div class="mini-dialog"><div class="mini-top"><span class="mini-symbol coral">⌘</span><div><b>Install Homepage pop-up</b><small>Add once. Update anytime.</small></div><span class="mini-x">×</span></div><div class="mini-tabs"><b>Pop-up script</b><span>Inline embed</span><span>Share link</span></div><div class="mini-code"><span>&lt;script async</span><span class="blue">&nbsp; src="forms/v2.js"</span><span class="blue">&nbsp; data-form="homepage-popup"</span><span>&gt;&lt;/script&gt;</span></div><div class="mini-success">✓ &nbsp; Detected on your website</div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>01 / Install modal</span><span class="piece-north">↗</span></div><h3>Homepage installation</h3><p>A clear setup flow with installation methods, snippets and status feedback.</p><div class="piece-tags"><span>Code snippets</span><span>3 modes</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="install" aria-label="Save Homepage installation to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-campaign" data-category="modal" data-search="create campaign newsletter workflow a guided creation flow with clear decisions, progression and drafts. stepper forms" data-id="campaign">
+  <a href="newsletter.html?screen=campaign" class="piece-link" aria-label="Open Create campaign interactive demo">
+    <div class="piece-art tone-lavender" aria-hidden="true"><div class="mini-dialog"><div class="mini-top"><span class="mini-symbol violet">✦</span><div><b>Create campaign</b><small>Start with the basics</small></div><span class="mini-x">×</span></div><div class="mini-steps"><strong>① Details</strong><span>② Audience</span><span>③ Content</span></div><div class="mini-label">Campaign format</div><div class="mini-options"><div class="picked">▣<small>Newsletter</small></div><div>◈<small>Announcement</small></div></div><div class="mini-label">Campaign name</div><div class="mini-field">The Creator Brief — October</div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>02 / Newsletter workflow</span><span class="piece-north">↗</span></div><h3>Create campaign</h3><p>A guided creation flow with clear decisions, progression and drafts.</p><div class="piece-tags"><span>Stepper</span><span>Forms</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="campaign" aria-label="Save Create campaign to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-subscribers" data-category="modal" data-search="add subscribers newsletter workflow three entry methods, validation, tags and subscription preferences. validation form" data-id="subscribers">
+  <a href="newsletter.html?screen=subscribers" class="piece-link" aria-label="Open Add subscribers interactive demo">
+    <div class="piece-art tone-rose" aria-hidden="true"><div class="mini-dialog"><div class="mini-top"><span class="mini-symbol violet">♙</span><div><b>Add subscribers</b><small>Grow your audience</small></div><span class="mini-x">×</span></div><div class="mini-tabs"><b>Single subscriber</b><span>Paste list</span><span>Import CSV</span></div><div class="mini-label">Email address</div><div class="mini-field">alex@example.com</div><div class="mini-two"><div><span>First name</span><div class="mini-field">Alex</div></div><div><span>Last name</span><div class="mini-field">Morgan</div></div></div><div class="mini-switch-row"><span>Send welcome email</span><i></i></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>03 / Newsletter workflow</span><span class="piece-north">↗</span></div><h3>Add subscribers</h3><p>Three entry methods, validation, tags and subscription preferences.</p><div class="piece-tags"><span>Validation</span><span>Form</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="subscribers" aria-label="Save Add subscribers to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-import" data-category="modal" data-search="import subscribers newsletter workflow map csv columns and review messy data before committing changes. csv mapping" data-id="import">
+  <a href="newsletter.html?screen=import" class="piece-link" aria-label="Open Import subscribers interactive demo">
+    <div class="piece-art tone-sage" aria-hidden="true"><div class="mini-dialog"><div class="mini-top"><span class="mini-symbol mint">⇧</span><div><b>Import subscribers</b><small>Match each column to a field</small></div><span class="mini-x">×</span></div><div class="mini-steps"><span>✓ Upload</span><strong>② Map columns</strong><span>③ Review</span></div><div class="mini-file">▣ &nbsp; subscribers.csv <small>80 rows</small></div><div class="mini-table"><div><span>Column</span><span>Map to</span><span>Status</span></div><div><span>email</span><b>Email</b><em>✓</em></div><div><span>first_name</span><b>First name</b><em>✓</em></div><div><span>joined_at</span><b>Signup date</b><em class="amber">!</em></div></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>04 / Newsletter workflow</span><span class="piece-north">↗</span></div><h3>Import subscribers</h3><p>Map CSV columns and review messy data before committing changes.</p><div class="piece-tags"><span>CSV</span><span>Mapping</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="import" aria-label="Save Import subscribers to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-offer" data-category="modal" data-search="create an offer newsletter workflow offer builder with a responsive price preview and live adjustments. preview pricing" data-id="offer">
+  <a href="newsletter.html?screen=offer" class="piece-link" aria-label="Open Create an offer interactive demo">
+    <div class="piece-art tone-iris" aria-hidden="true"><div class="mini-dialog"><div class="mini-top"><span class="mini-symbol violet">◇</span><div><b>Create offer</b><small>Reward new readers</small></div><span class="mini-x">×</span></div><div class="mini-offer"><div><span class="mini-label">Discount type</span><div class="mini-field">Percentage off</div><span class="mini-label">Discount</span><div class="mini-field">30 %</div><span class="mini-label">Offer code</span><div class="mini-field">WELCOME30</div></div><div class="mini-price"><span>30% OFF</span><strong>$3.50</strong><small>/ month</small><i>Subscribe →</i></div></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>05 / Newsletter workflow</span><span class="piece-north">↗</span></div><h3>Create an offer</h3><p>Offer builder with a responsive price preview and live adjustments.</p><div class="piece-tags"><span>Preview</span><span>Pricing</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="offer" aria-label="Save Create an offer to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-store" data-category="demo" data-search="storefront popup live example a gentle newsletter experience inside a fictional commerce site. storefront form" data-id="store">
+  <a href="demo-site.html" class="piece-link" aria-label="Open Storefront popup interactive demo">
+    <div class="piece-art tone-olive" aria-hidden="true"><div class="mini-store"><div class="store-bar">HARBOR & CO. <span>Home &nbsp; Collection &nbsp; Journal</span></div><div class="store-columns"><div><small>OBJECTS FOR EVERYDAY LIVING</small><h4>Make room for<br>beautiful living.</h4><i>Discover the collection ↗</i></div><div class="store-shape">✿</div></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>06 / Live example</span><span class="piece-north">↗</span></div><h3>Storefront popup</h3><p>A gentle newsletter experience inside a fictional commerce site.</p><div class="piece-tags"><span>Storefront</span><span>Form</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="store" aria-label="Save Storefront popup to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-share" data-category="demo" data-search="shareable signup live example an intentionally minimal, standalone newsletter subscription flow. signup link" data-id="share">
+  <a href="share.html" class="piece-link" aria-label="Open Shareable signup interactive demo">
+    <div class="piece-art tone-sand" aria-hidden="true"><div class="mini-share"><div class="share-logo">HARBOR & CO.</div><div class="share-dialog"><b>✳</b><h4>A little something<br>for your inbox.</h4><p>Fresh ideas, delivered occasionally.</p><div class="mini-field">Your email address</div><div class="share-submit">Subscribe →</div></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>07 / Live example</span><span class="piece-north">↗</span></div><h3>Shareable signup</h3><p>An intentionally minimal, standalone newsletter subscription flow.</p><div class="piece-tags"><span>Signup</span><span>Link</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="share" aria-label="Save Shareable signup to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-granola" data-category="sidebar" data-search="workspace sidebar granola-inspired three studies of a quiet workspace navigation and activity feed. navigation states" data-id="granola">
+  <a href="granola.html" class="piece-link" aria-label="Open Workspace sidebar interactive demo">
+    <div class="piece-art tone-stone" aria-hidden="true"><div class="mini-rails"><div class="mini-rail"><div class="rail-heading">🟢 Granola <span>⌄</span></div><div class="mini-tabs"><b>Home</b><span>Activity</span></div><p>⊕ &nbsp; AI Agent</p><p>▤ &nbsp; Sheets</p><p>▢ &nbsp; Documents</p><p class="rail-active">ϟ &nbsp; Skills</p><small>Projects</small><p>▱ &nbsp; Product Launch</p></div><div class="mini-rail"><div class="rail-heading">🟢 Granola</div><div class="rail-menu"><p>🟢 &nbsp; Granola &nbsp; ✓</p><p>🟡 &nbsp; Ramp</p><p>▲ &nbsp; Vercel</p><p>▣ &nbsp; Stripe</p><p>✳ &nbsp; Perplexity</p><hr><p>Invite members</p></div></div><div class="mini-rail"><div class="rail-heading">🟢 Granola</div><div class="mini-tabs"><span>Home</span><b>Activity</b></div><small>Urgent</small><p>Approve 3 changes <i class="mini-dot"></i></p><p>Protect CPA or push? <i class="mini-dot"></i></p><small>Deliverables</small><p>Project Brief</p></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>08 / Granola-inspired</span><span class="piece-north">↗</span></div><h3>Workspace sidebar</h3><p>Three studies of a quiet workspace navigation and activity feed.</p><div class="piece-tags"><span>Navigation</span><span>States</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="granola" aria-label="Save Workspace sidebar to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-media" data-category="dashboard" data-search="platform customization flightcast-inspired platform-specific media controls inside a layered publishing console. settings upload" data-id="media">
+  <a href="flightcast.html?screen=media" class="piece-link" aria-label="Open Platform customization interactive demo">
+    <div class="piece-art tone-lavender" aria-hidden="true"><div class="mini-dashboard"><aside><b>♢ Flightcast</b><small>Overview</small><small>Publishing</small><small>AI Insights</small><small>Analytics</small></aside><div class="dash-content"><div class="dash-top">Publishing &nbsp; › &nbsp; Platform customization</div><div class="dash-subhead">My Episode</div><div class="dash-tabs"><span>Overview</span><b>Content</b><span>Transcript</span></div><div class="dash-drop">⇧<small>Select or drop video</small></div></div><div class="dash-pop"><strong>Custom Media</strong><small>Platform settings</small><div class="dash-pop-line"></div><div class="dash-pop-line shorter"></div><div class="dash-pop-box">⇧ &nbsp; Select or drop video</div><div class="dash-pop-line shorter"></div></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>09 / Flightcast-inspired</span><span class="piece-north">↗</span></div><h3>Platform customization</h3><p>Platform-specific media controls inside a layered publishing console.</p><div class="piece-tags"><span>Settings</span><span>Upload</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="media" aria-label="Save Platform customization to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-title" data-category="dashboard" data-search="ai title generation flightcast-inspired draft and compare alternative titles inside a contextual side panel. content ai" data-id="title">
+  <a href="flightcast.html?screen=title" class="piece-link" aria-label="Open AI title generation interactive demo">
+    <div class="piece-art tone-peach" aria-hidden="true"><div class="mini-dashboard"><aside><b>♢ Flightcast</b><small>Overview</small><small>Publishing</small><small>AI Insights</small><small>Analytics</small></aside><div class="dash-content"><div class="dash-top">Publishing &nbsp; › &nbsp; AI title generation</div><div class="dash-subhead">My Episode</div><div class="dash-tabs"><span>Overview</span><b>Content</b><span>Transcript</span></div><div class="dash-lines"><b>Discipline Expert: The Habit<br>That Will Make or Break 2026!</b><i></i><i></i><i></i></div></div><div class="dash-pop"><strong>Custom Title</strong><small>Platform settings</small><div class="dash-pop-line"></div><div class="dash-pop-line shorter"></div><div class="dash-pop-box">Discipline Expert: The Habit…</div><div class="dash-pop-line shorter"></div></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>10 / Flightcast-inspired</span><span class="piece-north">↗</span></div><h3>AI title generation</h3><p>Draft and compare alternative titles inside a contextual side panel.</p><div class="piece-tags"><span>Content</span><span>AI</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="title" aria-label="Save AI title generation to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-analysis" data-category="dashboard" data-search="chart explanations flightcast-inspired retention chart annotations and an insight panel in a dense layout. charts insights" data-id="analysis">
+  <a href="flightcast.html?screen=analysis" class="piece-link" aria-label="Open Chart explanations interactive demo">
+    <div class="piece-art tone-sage" aria-hidden="true"><div class="mini-dashboard"><aside><b>♢ Flightcast</b><small>Overview</small><small>Publishing</small><small>AI Insights</small><small>Analytics</small></aside><div class="dash-content"><div class="dash-top">Publishing &nbsp; › &nbsp; Chart explanations</div><div class="dash-subhead">My Episode</div><div class="dash-tabs"><span>Overview</span><b>Analytics</b><span>Transcript</span></div><div class="dash-chart"><svg viewBox="0 0 190 90" preserveAspectRatio="none"><path d="M0 8L18 21L40 30L62 44L88 47L117 57L140 61L169 76L190 79" stroke="#3ba956"/><path d="M0 8L18 31L40 54L62 63L88 70L117 76L140 80L169 83L190 87" stroke="#ef5350"/></svg></div></div><div class="dash-pop"><strong>Fey AI analysis</strong><small>How your audience engages</small><div class="dash-pop-line"></div><div class="dash-pop-line shorter"></div><div class="dash-pop-box">Overview · Insights · Suggestions</div><div class="dash-pop-line shorter"></div></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>11 / Flightcast-inspired</span><span class="piece-north">↗</span></div><h3>Chart explanations</h3><p>Retention chart annotations and an insight panel in a dense layout.</p><div class="piece-tags"><span>Charts</span><span>Insights</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="analysis" aria-label="Save Chart explanations to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article>
+<article class="piece piece-chat" data-category="dashboard" data-search="podcast ai assistant flightcast-inspired a calm analytic chat environment with performance data in context. ai chat metrics" data-id="chat">
+  <a href="flightcast.html?screen=chat" class="piece-link" aria-label="Open Podcast AI assistant interactive demo">
+    <div class="piece-art tone-iris" aria-hidden="true"><div class="mini-dashboard"><aside><b>♢ Flightcast</b><small>Overview</small><small>Publishing</small><small>AI Insights</small><small>Analytics</small></aside><div class="dash-content"><div class="dash-top">Publishing &nbsp; › &nbsp; Podcast AI assistant</div><div class="dash-subhead">My Podcast</div><div class="dash-tabs"><span>Overview</span><b>Fey AI</b><span>Transcript</span></div><div class="dash-chat"><div class="chat-user">How did my show do?</div><p>✦ Thought for 6 seconds</p><small>You had 53.7K plays in the last 30 days.</small><div class="dash-chart"><svg viewBox="0 0 190 90" preserveAspectRatio="none"><path d="M0 10L23 51L50 40L77 47L100 15L120 42L150 26L190 33" stroke="#ef5350"/><path d="M0 45L23 62L50 59L77 57L100 43L120 66L150 57L190 59" stroke="#3ba956"/><path d="M0 54L23 68L50 64L77 66L100 58L120 71L150 65L190 70" stroke="#8853e8"/></svg></div></div></div></div></div>
+    <div class="piece-info"><div class="piece-eyebrow"><span>12 / Flightcast-inspired</span><span class="piece-north">↗</span></div><h3>Podcast AI assistant</h3><p>A calm analytic chat environment with performance data in context.</p><div class="piece-tags"><span>AI Chat</span><span>Metrics</span></div></div>
+  </a><button class="save-piece" type="button" data-favorite="chat" aria-label="Save Podcast AI assistant to favorites" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></svg></button></article></div>
+      <div class="empty-state" id="empty-results" hidden><div class="empty-mark">⌕</div><h3>No interfaces found</h3><p>Try another keyword, or return to the full collection.</p><button type="button" id="reset-filters">Show all studies <span>↗</span></button></div>
+    </section>
+    <section class="about" id="about">
+      <div class="about-left"><span class="overline">BUILT TO EXPLORE</span><h2>Good design is<br>in the <em>details.</em></h2></div>
+      <div class="about-right"><p>These studies turn static visual references into working interfaces. They are independent recreations, not the official products. Demo data stays in your browser.</p><div class="reference-links"><a href="https://github.com/ibelick/motion-primitives" target="_blank" rel="noopener noreferrer">Motion Primitives ↗</a><a href="https://github.com/shadcn-ui/ui" target="_blank" rel="noopener noreferrer">shadcn/ui ↗</a><a href="https://github.com/magicuidesign/magicui" target="_blank" rel="noopener noreferrer">Magic UI ↗</a><a href="https://x.com/MananTank_/status/2114324822612480049" target="_blank" rel="noopener noreferrer">X / Flightcast study ↗</a></div></div>
+    </section>
+  </main>
+  <footer class="footer"><a href="./" class="footer-brand"><span>✳</span> pop-up</a><span>© 2026 · An evolving interface archive</span><a href="https://github.com/weepwood/pop-up" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a></footer>
+</div>
+<dialog id="command-palette" class="command-palette" aria-label="Quick navigation"><div class="command-head"><span aria-hidden="true">⌕</span><input id="command-input" type="search" placeholder="Where would you like to go?" aria-label="Search and navigate" autocomplete="off"><button type="button" id="close-command" aria-label="Close quick navigation">Esc</button></div><div id="command-results" class="command-results" role="listbox" aria-label="Matching interfaces"></div><div class="command-footer">↵ to open <span>↑ ↓ to navigate</span> Esc to close</div></dialog>
+<div class="toast" id="toast" aria-live="polite" role="status"></div>
 </body>
 </html>

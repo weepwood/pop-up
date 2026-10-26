@@ -12,6 +12,7 @@ PAGES = [
     "demo-site.html",
     "share.html",
     "granola.html",
+    "flightcast.html",
 ]
 
 
@@ -58,6 +59,10 @@ required = [
     'href="demo-site.html"',
     'href="share.html"',
     'href="granola.html"',
+    'href="flightcast.html?screen=media"',
+    'href="flightcast.html?screen=title"',
+    'href="flightcast.html?screen=analysis"',
+    'href="flightcast.html?screen=chat"',
 ]
 for link in required:
     if link not in index:
@@ -67,4 +72,4 @@ if errors:
     for message in errors:
         print("ERROR:", message)
     raise SystemExit(1)
-print("OK: all local links and eight homepage entry routes resolve.")
+print("OK: all local links and twelve homepage entry routes resolve.")

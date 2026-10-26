@@ -6,6 +6,12 @@
 <meta name="theme-color" content="#f7f7f5">
 <meta name="description" content="pop-up — a living collection of 12 interactive interface studies, from nuanced dialogs to analytical dashboards.">
 <title>pop-up / An interface collection</title>
+<script>
+try {
+  const savedTheme = JSON.parse(localStorage.getItem("popup-gallery-v2-theme") || "null");
+  document.documentElement.dataset.theme = savedTheme === "dark" || (savedTheme !== "light" && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+} catch { document.documentElement.dataset.theme = "light"; }
+</script>
 <link rel="stylesheet" href="gallery-v2.css">
 <script src="gallery-v2.js" defer></script>
 </head>

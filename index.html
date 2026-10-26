@@ -8,6 +8,7 @@
   <title>pop-up — UI Design Collection</title>
   <link rel="stylesheet" href="gallery.css">
   <link rel="stylesheet" href="granola-preview.css">
+  <link rel="stylesheet" href="flightcast-preview.css">
   <script src="gallery.js" defer></script>
 </head>
 <body>
@@ -17,14 +18,14 @@
       <nav class="top-links" aria-label="Main navigation">
         <a class="active" href="./" aria-current="page">Gallery</a>
         <a href="install.html">Install UI</a>
-        <a href="newsletter.html">Newsletter</a><a href="granola.html">Sidebar UI</a>
+        <a href="newsletter.html">Newsletter</a><a href="granola.html">Sidebar UI</a><a href="flightcast.html?screen=media">Flightcast</a>
         <a class="github-link" href="https://github.com/weepwood/pop-up" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
 
     <main id="main-content">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-kicker"><span class="kicker-line"></span> THE INTERACTION COLLECTION <span class="issue-id">№ 001—008</span></div>
+        <div class="hero-kicker"><span class="kicker-line"></span> THE INTERACTION COLLECTION <span class="issue-id">№ 001—012</span></div>
         <div class="hero-main">
           <div class="hero-copy"><h1 id="hero-title">Small interfaces.<br><em>Thoughtful details.</em></h1><p>A growing library of carefully recreated modal interfaces. Explore each screen, interact with real controls, and discover how every detail works.</p><a class="hero-cta" href="#explore">Explore the collection <span aria-hidden="true">↘</span></a></div>
           <div class="hero-illustration" aria-hidden="true">
@@ -34,16 +35,16 @@
             <span class="art-glow"></span>
           </div>
         </div>
-        <div class="hero-stats"><div><strong>08</strong><span>Interactive screens</span></div><div><strong>03</strong><span>Design collections</span></div><div><strong>100%</strong><span>Browser-based demos</span></div><div class="hero-note">Built with HTML, CSS & JavaScript.<br>No framework required.</div></div>
+        <div class="hero-stats"><div><strong>12</strong><span>Interactive screens</span></div><div><strong>04</strong><span>Design collections</span></div><div><strong>100%</strong><span>Browser-based demos</span></div><div class="hero-note">Built with HTML, CSS & JavaScript.<br>No framework required.</div></div>
       </section>
 
       <section class="collection" id="explore" aria-labelledby="collection-title">
-        <div class="section-header"><div><div class="eyebrow">EXPLORE / ALL DESIGNS</div><h2 id="collection-title">The collection <span class="count" id="visible-count">08</span></h2></div><p>Click any card to open a full interactive preview.</p></div>
+        <div class="section-header"><div><div class="eyebrow">EXPLORE / ALL DESIGNS</div><h2 id="collection-title">The collection <span class="count" id="visible-count">12</span></h2></div><p>Click any card to open a full interactive preview.</p></div>
         <div class="gallery-toolbar">
           <div class="filter-group" role="group" aria-label="Filter designs">
-            <button type="button" class="filter active" data-filter="all" aria-pressed="true">All designs <span>08</span></button>
+            <button type="button" class="filter active" data-filter="all" aria-pressed="true">All designs <span>12</span></button>
             <button type="button" class="filter" data-filter="modal" aria-pressed="false">Modal dialogs <span>05</span></button>
-            <button type="button" class="filter" data-filter="sidebar" aria-pressed="false">Sidebars <span>01</span></button>
+            <button type="button" class="filter" data-filter="sidebar" aria-pressed="false">Sidebars <span>01</span></button><button type="button" class="filter" data-filter="dashboard" aria-pressed="false">Dashboards <span>04</span></button>
             <button type="button" class="filter" data-filter="demo" aria-pressed="false">Live demos <span>02</span></button>
           </div>
           <label class="search-field"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="sr-only">Search designs</span><input type="search" id="search" placeholder="Find a design…" autocomplete="off" aria-controls="card-grid"></label>
@@ -115,11 +116,40 @@
             </div>
             <div class="card-description"><div class="card-meta"><span class="design-number">08 / WORKSPACE SIDEBAR</span><span class="pill-tag">3 states</span></div><div class="card-heading"><h3>Granola-style workspace</h3><span class="card-arrow" aria-hidden="true">↗</span></div><p>Three beautifully restrained sidebar states: Home navigation, workspace switcher and Activity feed, all interactive.</p><span class="interaction-tags"><span>Workspace menu</span><span>Search</span><span>Activity feed</span><span>Local demo</span></span></div>
           </a>
+
+          <a href="flightcast.html?screen=media" class="design-card" data-category="dashboard" data-search="flightcast media platform customization podcast dashboard">
+            <div class="card-visual flightcast-visual"><div class="fc-mock">
+              <aside><strong>♢ Flightcast</strong><span>Overview</span><span>Publishing</span><span>Platform Customization</span><span>AI Generation</span><span>✧ AI Insights</span><span>Analytics</span></aside>
+              <div class="fc-area"><header>Publishing › Platform customization</header><div class="fc-inner"><h4>Media</h4><small>Upload video for YouTube, Spotify and RSS</small><div class="fc-episode"><strong>My Episode</strong><div class="fc-tabs">Overview &nbsp; Content &nbsp; <b>Media</b></div><div class="fc-box">⇧<br>Select or drop video</div></div></div><div class="fc-pop"><strong>Custom Media</strong><p>Choose platform specific video</p><div class="fc-pop-row">🔴 YouTube <b>●</b></div><div class="fc-placeholder">⇧  Select or drop video</div><div class="fc-pop-row">🟢 Spotify <span>●</span></div><div class="fc-pop-row">🟠 RSS Feed <span>●</span></div></div></div>
+            </div></div>
+            <div class="card-description"><div class="card-meta"><span class="design-number">09 / FLIGHTCAST</span><span class="pill-tag purple">Media</span></div><div class="card-heading"><h3>Platform customization</h3><span class="card-arrow">↗</span></div><p>Upload video for YouTube, Spotify and RSS. Open the full interactive reproduction.</p><span class="interaction-tags"><span>Dashboard</span><span>Interactive</span></span></div>
+          </a>
+          <a href="flightcast.html?screen=title" class="design-card" data-category="dashboard" data-search="flightcast title ai title generation podcast dashboard">
+            <div class="card-visual flightcast-visual"><div class="fc-mock">
+              <aside><strong>♢ Flightcast</strong><span>Overview</span><span>Publishing</span><span>Platform Customization</span><span>AI Generation</span><span>✧ AI Insights</span><span>Analytics</span></aside>
+              <div class="fc-area"><header>Publishing › AI title generation</header><div class="fc-inner"><h4>Title</h4><small>Edit the episode title and chapters</small><div class="fc-episode"><strong>My Episode</strong><div class="fc-tabs">Overview &nbsp; Content &nbsp; <b>Title</b></div><div class="fc-box">⇧<br>Select or drop video</div></div></div><div class="fc-pop"><strong>Custom Title</strong><p>Browse 10 generated titles</p><div class="fc-pop-row">🔴 YouTube <b>●</b></div><div class="fc-placeholder">Discipline Expert: The Habit That Will Make Or Break Your Entire 2026!</div><div class="fc-pop-row">🟢 Spotify <span>●</span></div><div class="fc-pop-row">🟠 RSS Feed <span>●</span></div></div></div>
+            </div></div>
+            <div class="card-description"><div class="card-meta"><span class="design-number">10 / FLIGHTCAST</span><span class="pill-tag purple">Title</span></div><div class="card-heading"><h3>AI title generation</h3><span class="card-arrow">↗</span></div><p>Edit the episode title and chapters. Open the full interactive reproduction.</p><span class="interaction-tags"><span>Dashboard</span><span>Interactive</span></span></div>
+          </a>
+          <a href="flightcast.html?screen=analysis" class="design-card" data-category="dashboard" data-search="flightcast analysis chart explanations podcast dashboard">
+            <div class="card-visual flightcast-visual"><div class="fc-mock">
+              <aside><strong>♢ Flightcast</strong><span>Overview</span><span>Publishing</span><span>Platform Customization</span><span>AI Generation</span><span>✧ AI Insights</span><span>Analytics</span></aside>
+              <div class="fc-area"><header>Publishing › Chart explanations</header><div class="fc-inner"><h4>Retention</h4><small>Compare retention on Spotify and YouTube</small><div class="fc-episode"><strong>My Episode</strong><div class="fc-tabs">Overview &nbsp; Content &nbsp; <b>Retention</b></div><div class="fc-box"><svg viewBox="0 0 170 70"><polyline fill="none" stroke="#34a853" stroke-width="2" points="0,10 30,28 60,35 90,32 115,51 145,49 170,63"/><polyline fill="none" stroke="#f44343" stroke-width="2" points="0,12 30,33 60,50 90,57 115,59 145,64 170,68"/></svg></div></div></div><div class="fc-pop"><strong>Fey AI analysis</strong><p>Overview · Insights · Suggestions</p><div class="fc-pop-row">🔴 YouTube <b>●</b></div><div class="fc-placeholder">Spotify holds its audience much longer</div><div class="fc-pop-row">🟢 Spotify <span>●</span></div><div class="fc-pop-row">🟠 RSS Feed <span>●</span></div></div></div>
+            </div></div>
+            <div class="card-description"><div class="card-meta"><span class="design-number">11 / FLIGHTCAST</span><span class="pill-tag purple">Retention</span></div><div class="card-heading"><h3>Chart explanations</h3><span class="card-arrow">↗</span></div><p>Compare retention on Spotify and YouTube. Open the full interactive reproduction.</p><span class="interaction-tags"><span>Dashboard</span><span>Interactive</span></span></div>
+          </a>
+          <a href="flightcast.html?screen=chat" class="design-card" data-category="dashboard" data-search="flightcast chat fey ai podcast assistant podcast dashboard">
+            <div class="card-visual flightcast-visual"><div class="fc-mock">
+              <aside><strong>♢ Flightcast</strong><span>Overview</span><span>Publishing</span><span>Platform Customization</span><span>AI Generation</span><span>✧ AI Insights</span><span>Analytics</span></aside>
+              <div class="fc-area"><header>Publishing › Fey AI podcast assistant</header><div class="fc-inner"><h4>Fey AI</h4><small>53.7K plays · sample analytics</small><div class="fc-episode"><strong>My Episode</strong><div class="fc-tabs">Overview &nbsp; Content &nbsp; <b>Fey AI</b></div><div class="fc-box"><svg viewBox="0 0 170 70"><polyline fill="none" stroke="#34a853" stroke-width="2" points="0,10 30,28 60,35 90,32 115,51 145,49 170,63"/><polyline fill="none" stroke="#f44343" stroke-width="2" points="0,12 30,33 60,50 90,57 115,59 145,64 170,68"/></svg></div></div></div><div class="fc-pop"><strong>My Podcast</strong><p>YouTube · Spotify · RSS</p><div class="fc-pop-row">🔴 YouTube <b>●</b></div><div class="fc-placeholder">How did my show do in the last 30 days?</div><div class="fc-pop-row">🟢 Spotify <span>●</span></div><div class="fc-pop-row">🟠 RSS Feed <span>●</span></div></div></div>
+            </div></div>
+            <div class="card-description"><div class="card-meta"><span class="design-number">12 / FLIGHTCAST</span><span class="pill-tag purple">Fey AI</span></div><div class="card-heading"><h3>Fey AI podcast assistant</h3><span class="card-arrow">↗</span></div><p>53.7K plays · sample analytics. Open the full interactive reproduction.</p><span class="interaction-tags"><span>Dashboard</span><span>Interactive</span></span></div>
+          </a>
         </div>
         <div class="empty-results" id="empty-results" hidden><span aria-hidden="true">⌕</span><h3>No matching designs</h3><p>Try a different keyword or category.</p><button type="button" id="reset-filters">Show all designs</button></div>
       </section>
     </main>
-    <footer class="site-footer"><span><span class="footer-mark">✳</span> pop-up / a personal interface collection</span><span>8 interactive screens · Static HTML / CSS / JavaScript</span><a href="https://github.com/weepwood/pop-up" target="_blank" rel="noopener noreferrer">Source code ↗</a></footer>
+    <footer class="site-footer"><span><span class="footer-mark">✳</span> pop-up / a personal interface collection</span><span>12 interactive screens · Static HTML / CSS / JavaScript</span><a href="https://github.com/weepwood/pop-up" target="_blank" rel="noopener noreferrer">Source code ↗</a></footer>
   </div>
 </body>
 </html>

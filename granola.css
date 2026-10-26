@@ -94,3 +94,16 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #8ead
 @media(max-width:930px){.showcase{padding:10px 17px 22px}.stage{display:flex;gap:18px;overflow-x:auto;overflow-y:visible;width:100%;scroll-snap-type:x mandatory;scroll-padding-left:0;padding:4px 1px 15px;scrollbar-width:thin}.rail-panel{flex:0 0 min(405px,84vw);height:min(830px,calc(100dvh - 110px));min-height:650px;scroll-snap-align:center}.topbar{height:34px}.showcase-name{font-size:9px}.rail-header{padding:21px 22px 0}.rail-content{padding-left:17px;padding-right:17px}.nav-row,.item-row,.activity-row{font-size:20px}.section-name,.sidebar-section-title{font-size:19px}.menu-item{font-size:20px;padding:0 22px;gap:15px}.menu-popover{left:18px;right:18px}}
 @media(max-width:500px){.showcase{padding:9px 11px 14px}.stage{gap:10px}.rail-panel{flex-basis:min(405px,94vw);height:min(810px,calc(100dvh - 116px))}.showcase-name{display:none}.hint{font-size:10px}.rail-tabs{margin-top:27px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}}
+
+.rail-panel.is-compact .rail-content{opacity:.48}
+.demo-dialog{border:1px solid #dedede;background:#fff;border-radius:17px;box-shadow:0 28px 65px #0003;padding:0;width:min(390px,calc(100vw - 35px));max-width:none;color:#303030}
+.demo-dialog::backdrop{background:#00000045;backdrop-filter:blur(2px)}
+.demo-dialog form{padding:25px}
+.demo-dialog h2{font-size:21px;font-weight:590;margin:0 0 8px}
+.demo-dialog p{font-size:12px;color:#8d8d8d;margin:0 0 24px}
+.demo-dialog label{display:block;font-size:12px;margin:0 0 9px;color:#565656}
+.demo-dialog input{width:100%;border:1px solid #dadada;border-radius:9px;padding:12px 13px;outline:none;font-size:15px}
+.demo-dialog input:focus{border-color:#777}
+.dialog-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:22px}
+.dialog-actions button{border-radius:9px;border:1px solid #ddd;background:white;padding:11px 17px;font-size:13px}
+.dialog-actions button.dialog-save{color:#fff;border-color:#333;background:#333}

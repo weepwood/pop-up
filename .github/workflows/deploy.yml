@@ -23,7 +23,7 @@ jobs:
       - name: Check required files
         run: |
           set -euo pipefail
-          for file in index.html install.html demo-site.html share.html styles.css main.js forms/v2.js newsletter.html newsletter.css newsletter.js gallery.css gallery.js granola.html granola.css granola.js granola-preview.css flightcast.html flightcast.css flightcast.js flightcast-preview.css gallery-v2.css gallery-v2.js scripts/check_local_links.py; do
+          for file in index.html install.html demo-site.html share.html styles.css main.js forms/v2.js newsletter.html newsletter.css newsletter.js gallery.css gallery.js granola.html granola.css granola.js granola-preview.css flightcast.html flightcast.css flightcast.js flightcast-preview.css gallery-v2.css gallery-v2.js scripts/check_local_links.py scripts/check_gallery.py; do
             test -s "$file" || { echo "::error file=$file::Required file missing or empty"; exit 1; }
           done
 
@@ -38,7 +38,9 @@ jobs:
           node --check gallery-v2.js
 
       - name: Verify homepage navigation and local assets
-        run: python3 scripts/check_local_links.py
+        run: |
+          python3 scripts/check_local_links.py
+          python3 scripts/check_gallery.py
 
       - name: Prepare Pages directory
         run: |

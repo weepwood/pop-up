@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#efefef">
+  <meta name="description" content="Four interactive newsletter modal recreations, inspired by Jubayer's UI studies.">
+  <title>Newsletter modal collection · pop-up</title>
+  <link rel="stylesheet" href="newsletter.css">
+  <script src="newsletter.js" defer></script>
+</head>
+<body>
+  <main class="stage">
+    <header class="gallery-bar" aria-label="Design gallery navigation">
+      <a class="brand-link" href="./index.html" aria-label="Back to installation pop-up">← <span>pop-up</span></a>
+      <nav class="gallery-switcher" aria-label="Choose modal">
+        <button type="button" class="gallery-tab is-active" data-open="campaign" aria-current="page"><span>01</span> Create campaign</button>
+        <button type="button" class="gallery-tab" data-open="subscribers"><span>02</span> Add subscribers</button>
+        <button type="button" class="gallery-tab" data-open="import"><span>03</span> Import CSV</button>
+        <button type="button" class="gallery-tab" data-open="offer"><span>04</span> Create offer</button>
+      </nav>
+      <a class="source-link" href="https://x.com/jubayer6910/status/2114634027147923544" target="_blank" rel="noopener noreferrer">Original design ↗</a>
+    </header>
+
+    <section class="modal-frame" aria-label="Newsletter UI modal collection">
+      <article class="modal-panel" id="campaign-panel" data-panel="campaign" aria-labelledby="campaign-title">
+        <div class="modal-inner">
+          <div class="modal-head">
+            <div class="head-icon violet-icon" aria-hidden="true">✧</div>
+            <div class="head-copy"><h1 id="campaign-title">Create campaign</h1><p>Bring your next edition to life. Start with the basics.</p></div>
+            <button type="button" class="icon-close" data-close aria-label="Close dialog">×</button>
+          </div>
+          <ol class="steps four-steps" aria-label="Campaign creation progress">
+            <li class="step current"><b>1</b><span>Details</span></li>
+            <li class="step"><b>2</b><span>Audience</span></li>
+            <li class="step"><b>3</b><span>Content</span></li>
+            <li class="step"><b>4</b><span>Review</span></li>
+          </ol>
+          <form id="campaign-form" novalidate>
+            <div class="field-block">
+              <div class="label-row"><label class="field-title" id="format-label">Campaign format</label><span class="field-note">Choose what you want to send</span></div>
+              <div class="format-grid" role="radiogroup" aria-labelledby="format-label">
+                <label class="option-card selected"><input type="radio" name="format" value="Newsletter issue" checked><span class="choice-top"><span class="tile-icon">▤</span><span class="radio-dot"></span></span><strong>Newsletter issue</strong><small>Your regular editorial update</small></label>
+                <label class="option-card"><input type="radio" name="format" value="Announcement"><span class="choice-top"><span class="tile-icon">◈</span><span class="radio-dot"></span></span><strong>Announcement</strong><small>Share some exciting news</small></label>
+                <label class="option-card"><input type="radio" name="format" value="Welcome email"><span class="choice-top"><span class="tile-icon">✉</span><span class="radio-dot"></span></span><strong>Welcome email</strong><small>Say hello to new readers</small></label>
+                <label class="option-card"><input type="radio" name="format" value="Promotion"><span class="choice-top"><span class="tile-icon">✳</span><span class="radio-dot"></span></span><strong>Promotion</strong><small>Highlight a special offer</small></label>
+              </div>
+            </div>
+            <div class="field-block"><label class="field-title" for="campaign-name">Campaign name <span class="req">*</span></label><input class="text-input" id="campaign-name" name="name" placeholder="e.g. The Creator Brief — October edition" maxlength="100" required><p class="field-note below">Only your team will see this name.</p></div>
+            <div class="two-cols">
+              <div class="field-block"><label class="field-title" for="campaign-publication">Publication</label><select class="select-input" id="campaign-publication"><option>The Creator Brief</option><option>Studio Notes</option><option>Design Dispatch</option></select></div>
+              <div class="field-block"><label class="field-title" for="campaign-audience">Send to</label><select class="select-input" id="campaign-audience"><option>All subscribers</option><option>Paid subscribers</option><option>Free subscribers</option></select></div>
+            </div>
+            <p class="form-error" id="campaign-error" role="alert" hidden></p>
+          </form>
+        </div>
+        <footer class="modal-footer"><span class="footer-hint" id="campaign-footnote">Your campaign will be saved as a draft</span><div class="footer-buttons"><button type="button" class="btn btn-secondary" data-reset="campaign">Cancel</button><button type="submit" form="campaign-form" class="btn btn-primary">Continue <span aria-hidden="true">→</span></button></div></footer>
+      </article>
+
+      <article class="modal-panel" id="subscribers-panel" data-panel="subscribers" aria-labelledby="subscribers-title" hidden>
+        <div class="modal-inner">
+          <div class="modal-head"><div class="head-icon violet-icon" aria-hidden="true">♙</div><div class="head-copy"><h1 id="subscribers-title">Add subscribers</h1><p>Grow The Creator Brief, one reader at a time.</p></div><button type="button" class="icon-close" data-close aria-label="Close dialog">×</button></div>
+          <div class="segmented" role="tablist" aria-label="Subscriber entry method">
+            <button type="button" role="tab" aria-selected="true" class="segment active" data-entry="single">Single subscriber</button>
+            <button type="button" role="tab" aria-selected="false" class="segment" data-entry="paste">Paste list</button>
+            <button type="button" role="tab" aria-selected="false" class="segment" data-entry="csv">Import CSV</button>
+          </div>
+          <form id="subscriber-form" novalidate>
+            <div data-entry-panel="single">
+              <div class="field-block"><label class="field-title" for="subscriber-email">Email address <span class="req">*</span></label><input class="text-input" type="email" id="subscriber-email" placeholder="alex@example.com" autocomplete="email"></div>
+              <div class="two-cols">
+                <div class="field-block"><label class="field-title" for="subscriber-first">First name</label><input class="text-input" id="subscriber-first" placeholder="Alex"></div>
+                <div class="field-block"><label class="field-title" for="subscriber-last">Last name</label><input class="text-input" id="subscriber-last" placeholder="Morgan"></div>
+              </div>
+            </div>
+            <div data-entry-panel="paste" hidden>
+              <div class="field-block"><label class="field-title" for="paste-emails">Email addresses</label><textarea class="text-input multi-input" id="paste-emails" placeholder="alex@example.com&#10;sam@example.com&#10;jordan@example.com"></textarea><p class="field-note below" id="paste-count">Separate with commas or new lines · 0 valid</p></div>
+            </div>
+            <div data-entry-panel="csv" hidden>
+              <label class="csv-drop" for="subscriber-csv"><span class="file-icon">⇧</span><strong>Select a CSV file</strong><small>Accepted: .csv · Up to 5 MB</small><span class="btn btn-secondary small-btn">Browse files</span></label>
+              <input class="sr-only" id="subscriber-csv" type="file" accept=".csv,text/csv">
+              <p class="field-note below" id="csv-file-name">Map the columns before adding subscribers.</p>
+            </div>
+            <div class="two-cols">
+              <div class="field-block"><label class="field-title" for="subscriber-plan">Subscription plan</label><select class="select-input" id="subscriber-plan"><option>Free subscribers</option><option>Paid subscribers</option><option>Founding members</option></select></div>
+              <div class="field-block"><label class="field-title" for="subscriber-tags">Tags</label><div class="tag-editor" id="subscriber-tags-box"><div class="tag-list" id="subscriber-tag-list"></div><input id="subscriber-tags" aria-label="Add tag" placeholder="+ Add tag" maxlength="25"></div><p class="field-note below">Press Enter to add a tag.</p></div>
+            </div>
+            <div class="switch-list">
+              <label class="switch-row"><span><strong>Send a welcome email</strong><small>Give readers a warm introduction.</small></span><input class="switch-input" type="checkbox" id="subscriber-welcome" checked><span class="toggle-visual"></span></label>
+              <label class="switch-row"><span><strong>Require double opt-in</strong><small>Ask subscribers to confirm their address.</small></span><input class="switch-input" type="checkbox" id="subscriber-double"><span class="toggle-visual"></span></label>
+            </div>
+            <label class="consent-line"><input type="checkbox" id="subscriber-consent"><span>I confirm these readers gave permission to subscribe.</span></label>
+            <p class="form-error" id="subscriber-error" role="alert" hidden></p>
+          </form>
+        </div>
+        <footer class="modal-footer"><span class="footer-hint" id="subscriber-footnote">Subscribers are stored only in this browser</span><div class="footer-buttons"><button type="button" class="btn btn-secondary" data-reset="subscribers">Cancel</button><button type="submit" form="subscriber-form" class="btn btn-primary" id="subscriber-submit">Add subscriber <span>→</span></button></div></footer>
+      </article>
+
+      <article class="modal-panel" id="import-panel" data-panel="import" aria-labelledby="import-title" hidden>
+        <div class="modal-inner">
+          <div class="modal-head"><div class="head-icon violet-icon" aria-hidden="true">⇧</div><div class="head-copy"><h1 id="import-title">Import subscribers</h1><p>Match the columns in your file to the fields in The Creator Brief.</p></div><button type="button" class="icon-close" data-close aria-label="Close dialog">×</button></div>
+          <ol class="steps three-steps"><li class="step complete"><b>✓</b><span>Upload</span></li><li class="step current" id="map-progress"><b>2</b><span>Map columns</span></li><li class="step" id="review-progress"><b>3</b><span>Review</span></li></ol>
+          <div class="upload-summary"><span class="file-icon green">CSV</span><span><strong id="import-file-name">creator-brief-subscribers.csv</strong><small id="import-file-size">Sample data · 80 rows · 5 columns</small></span><button type="button" class="text-action" id="replace-file">Replace file</button><input type="file" class="sr-only" id="import-csv" accept=".csv,text/csv"></div>
+          <div id="mapping-view">
+            <div class="table-scroll"><table class="mapping-table"><thead><tr><th>Column in file</th><th>Sample value</th><th>Import as</th><th>Status</th></tr></thead><tbody id="mapping-body"></tbody></table></div>
+            <div class="warning-note" id="date-warning"><span class="warning-icon">!</span><span><strong id="date-warning-title">18 rows have unreadable dates</strong><small>Dates without a recognizable format will be omitted. Other subscriber data is preserved.</small></span></div>
+          </div>
+          <div id="review-view" hidden>
+            <h2 class="subheading">Review before importing</h2>
+            <div class="review-stats"><div><strong id="review-total">80</strong><small>Total rows</small></div><div><strong id="review-valid">80</strong><small>Valid emails</small></div><div><strong id="review-invalid">0</strong><small>Invalid or duplicate</small></div></div>
+            <div class="review-detail" id="review-summary"></div>
+          </div>
+          <label class="consent-line import-consent"><input type="checkbox" id="import-consent"><span>I confirm these readers gave permission to subscribe. Imported records will be stored locally for this demo.</span></label>
+          <p class="form-error" id="import-error" role="alert" hidden></p>
+        </div>
+        <footer class="modal-footer"><span class="footer-hint" id="import-footnote">Step 2 of 3 · sample import</span><div class="footer-buttons"><button type="button" class="btn btn-secondary" id="import-back">Back</button><button type="button" class="btn btn-primary" id="import-next">Continue to review <span>→</span></button></div></footer>
+      </article>
+
+      <article class="modal-panel offer-panel" id="offer-panel" data-panel="offer" aria-labelledby="offer-title" hidden>
+        <div class="modal-inner">
+          <div class="modal-head"><div class="head-icon violet-icon" aria-hidden="true">◇</div><div class="head-copy"><h1 id="offer-title">Create offer</h1><p>Reward new readers with a special subscription price.</p></div><button type="button" class="icon-close" data-close aria-label="Close dialog">×</button></div>
+          <form id="offer-form" novalidate><div class="offer-layout">
+            <div class="offer-fields">
+              <div class="field-block"><label class="field-title" for="offer-name">Offer name</label><input id="offer-name" class="text-input" value="Welcome to The Creator Brief"></div>
+              <div class="field-block"><label class="field-title">Discount type</label><div class="discount-tabs" role="radiogroup" aria-label="Discount type"><label class="discount-pill chosen"><input type="radio" name="discount-type" value="percent" checked>Percentage off</label><label class="discount-pill"><input type="radio" name="discount-type" value="amount">Amount off</label></div></div>
+              <div class="two-cols">
+                <div class="field-block"><label class="field-title" for="offer-discount">Discount value</label><div class="input-addon"><input id="offer-discount" type="number" min="0" max="100" step="1" value="30"><span id="discount-unit">%</span></div></div>
+                <div class="field-block"><label class="field-title" for="offer-duration">Duration</label><select id="offer-duration" class="select-input"><option value="3">First 3 months</option><option value="1">First month</option><option value="6">First 6 months</option><option value="12">First year</option></select></div>
+              </div>
+              <div class="field-block"><label class="field-title" for="offer-eligible">Eligible readers</label><select id="offer-eligible" class="select-input"><option>New subscribers</option><option>All free subscribers</option><option>All subscribers</option></select></div>
+              <div class="field-block"><label class="field-title" for="offer-code">Offer code</label><input id="offer-code" class="text-input code-input" maxlength="24" value="WELCOME30" pattern="[A-Za-z0-9_-]{3,24}"></div>
+              <label class="switch-row offer-switch"><span><strong>Make this offer available</strong><small>Allow readers to use the shareable link.</small></span><input class="switch-input" id="offer-active" type="checkbox" checked><span class="toggle-visual"></span></label>
+            </div>
+            <aside class="offer-preview" aria-live="polite">
+              <div class="preview-top"><span>LIVE PREVIEW</span><span class="preview-dot">●</span></div>
+              <div class="preview-brand">✳ <span>The Creator Brief</span></div>
+              <div class="preview-card">
+                <span class="offer-pill" id="preview-badge">30% OFF</span>
+                <h2>Thoughtful ideas.<br>Delivered weekly.</h2>
+                <p>Join readers turning great ideas into better work.</p>
+                <div class="price-row"><strong id="preview-price">$3.50</strong><span>/ month</span></div>
+                <div class="price-was" id="preview-before">Normally $5.00 / month</div>
+                <div class="preview-btn">Subscribe and save →</div>
+                <small id="preview-duration">For your first 3 months</small>
+              </div>
+              <div class="preview-link-row"><span><small>Shareable link</small><strong id="preview-link">/offer/WELCOME30</strong></span><button type="button" id="offer-copy" class="copy-link" aria-label="Copy offer link">⧉</button></div>
+              <div class="eligible-note">◎ <span id="preview-eligible">New subscribers</span> · <span id="preview-availability">Available now</span></div>
+            </aside>
+          </div><p class="form-error" id="offer-error" role="alert" hidden></p></form>
+        </div>
+        <footer class="modal-footer"><span class="footer-hint" id="offer-footnote">Preview updates as you edit the offer</span><div class="footer-buttons"><button type="button" class="btn btn-secondary" data-reset="offer">Cancel</button><button type="submit" form="offer-form" class="btn btn-primary">Create offer <span>→</span></button></div></footer>
+      </article>
+    </section>
+
+    <div class="closed-panel" id="closed-panel" hidden><span>✳</span><h2>Modal closed</h2><p>Pick one of the four designs to open it again.</p><button class="btn btn-primary" data-open="campaign" type="button">Open collection →</button></div>
+    <div class="gallery-bottom"><span>THE CREATOR BRIEF · INTERACTIVE UI STUDIES</span><span>Inspired by <a href="https://x.com/jubayer6910/status/2114634027147923544" target="_blank" rel="noopener noreferrer">@jubayer6910</a> · Local demo only</span></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>

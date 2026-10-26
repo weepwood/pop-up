@@ -23,7 +23,7 @@ jobs:
       - name: Check required files
         run: |
           set -euo pipefail
-          for file in index.html install.html demo-site.html share.html styles.css main.js forms/v2.js newsletter.html newsletter.css newsletter.js gallery.css gallery.js granola.html granola.css granola.js granola-preview.css flightcast.html flightcast.css flightcast.js flightcast-preview.css scripts/check_local_links.py; do
+          for file in index.html install.html demo-site.html share.html styles.css main.js forms/v2.js newsletter.html newsletter.css newsletter.js gallery.css gallery.js granola.html granola.css granola.js granola-preview.css flightcast.html flightcast.css flightcast.js flightcast-preview.css gallery-v2.css gallery-v2.js scripts/check_local_links.py; do
             test -s "$file" || { echo "::error file=$file::Required file missing or empty"; exit 1; }
           done
 
@@ -35,6 +35,7 @@ jobs:
           node --check gallery.js
           node --check granola.js
           node --check flightcast.js
+          node --check gallery-v2.js
 
       - name: Verify homepage navigation and local assets
         run: python3 scripts/check_local_links.py
@@ -42,7 +43,7 @@ jobs:
       - name: Prepare Pages directory
         run: |
           mkdir -p _site/forms
-          cp index.html install.html demo-site.html share.html newsletter.html styles.css newsletter.css gallery.css granola.html granola.css granola.js granola-preview.css flightcast.html flightcast.css flightcast.js flightcast-preview.css main.js newsletter.js gallery.js _site/
+          cp index.html install.html demo-site.html share.html newsletter.html styles.css newsletter.css gallery.css granola.html granola.css granola.js granola-preview.css flightcast.html flightcast.css flightcast.js flightcast-preview.css gallery-v2.css gallery-v2.js main.js newsletter.js gallery.js _site/
           cp forms/v2.js _site/forms/
           touch _site/.nojekyll
 

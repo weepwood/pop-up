@@ -1,3 +1,53 @@
+# pop-up · UI Design Collection
+
+基于 HTML、CSS 和 JavaScript 的交互式 UI 复刻作品集，支持 GitHub Pages 自动部署。首页现为 **统一作品导航页**，原安装弹窗保留在独立地址，所有页面均可从首页进入。
+
+**在线体验**：[作品导航](https://weepwood.github.io/pop-up/) · [安装弹窗](https://weepwood.github.io/pop-up/install.html) · [Newsletter 设计](https://weepwood.github.io/pop-up/newsletter.html)
+
+## 页面入口
+
+| 页面 | 路由 | 功能 |
+| --- | --- | --- |
+| UI Gallery | `index.html` | 7 个页面入口、分类筛选、关键词搜索、卡片预览 |
+| Install Homepage pop-up | `install.html` | 脚本/内嵌/分享三种安装方式，代码复制与引导 |
+| Create campaign | `newsletter.html?screen=campaign` | 4 步邮件活动向导和本地草稿 |
+| Add subscribers | `newsletter.html?screen=subscribers` | 邮箱验证、批量录入和标签 |
+| Import subscribers | `newsletter.html?screen=import` | CSV 解析、映射、复核导入 |
+| Create offer | `newsletter.html?screen=offer` | 优惠折扣、价格实时预览 |
+| Storefront demo | `demo-site.html` | 用于测试订阅弹窗的示例商店 |
+| Share link form | `share.html` | 直接访问的订阅表单页面 |
+
+> 首页共展示 7 个交互界面入口（安装弹窗 + Newsletter 四个页面 + 2 个演示页面）。`newsletter.html` 的 4 个入口通过 `screen` 查询参数切换状态。
+
+### 快速运行
+
+```bash
+python -m http.server 5173
+```
+
+打开 `http://localhost:5173/`，从目录中选择要预览的页面。
+
+### 项目文件
+
+- `index.html` / `gallery.css` / `gallery.js`：作品首页及筛选。
+- `install.html` / `styles.css` / `main.js`：安装弹窗。
+- `newsletter.html` / `newsletter.css` / `newsletter.js`：四个 Newsletter UI。
+- `demo-site.html` / `share.html` / `forms/v2.js`：本地演示订阅流程。
+- `scripts/check_local_links.py`：自动验证所有静态页面及首页入口。
+- `.github/workflows/deploy.yml`：GitHub Actions 自动部署 GitHub Pages。
+
+### 部署与验证
+
+向 `main` 分支推送代码后 GitHub Actions 将检查必需文件、JavaScript 语法和所有页面的本地资源链接，之后上传静态站点并部署到 GitHub Pages。手动运行工作流同样支持。
+
+### 数据与原型说明
+
+Newsletter 联系人、活动草稿、优惠记录及订阅测试信息保存在当前浏览器的 `localStorage` 中。**这是本地交互演示，不会实际发送邮件、收费或向服务端存储数据。** 新 UI 参考 [X 原帖](https://x.com/jubayer6910/status/2114634027147923544)，并非原产品正式实现。
+
+---
+
+## 早期开发说明
+
 # Install Homepage pop-up — UI 复刻与交互演示
 
 基于提供的第一张截图复刻安装弹窗，同时实现 **Pop-up script / Inline embed / Share link** 三种安装状态。纯 HTML、CSS、JavaScript，不需要安装依赖或打包。

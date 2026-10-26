@@ -24,7 +24,7 @@
   }
 
   function selectFilter(value) {
-    category = ["all", "modal", "sidebar", "demo"].includes(value) ? value : "all";
+    category = ["all", "modal", "sidebar", "dashboard", "demo"].includes(value) ? value : "all";
     for (const button of filters) {
       const selected = button.dataset.filter === category;
       button.classList.toggle("active", selected);

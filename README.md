@@ -8,7 +8,7 @@
 
 | 页面 | 路由 | 功能 |
 | --- | --- | --- |
-| UI Gallery | `index.html` | 8 个页面入口、分类筛选、关键词搜索、卡片预览 |
+| UI Gallery | `index.html` | 12 个页面入口、分类筛选、关键词搜索、卡片预览 |
 | Install Homepage pop-up | `install.html` | 脚本/内嵌/分享三种安装方式，代码复制与引导 |
 | Create campaign | `newsletter.html?screen=campaign` | 4 步邮件活动向导和本地草稿 |
 | Add subscribers | `newsletter.html?screen=subscribers` | 邮箱验证、批量录入和标签 |
@@ -17,8 +17,12 @@
 | Storefront demo | `demo-site.html` | 用于测试订阅弹窗的示例商店 |
 | Share link form | `share.html` | 直接访问的订阅表单页面 |
 | Granola workspace sidebar | `granola.html` | 3 栏侧边栏 Home / Workspace / Activity 交互复刻 |
+| Flightcast · Media | `flightcast.html?screen=media` | 自定义视频、音频、平台独立上传 |
+| Flightcast · AI Title | `flightcast.html?screen=title` | 标题建议、编辑器、章节 |
+| Flightcast · Chart Explanations | `flightcast.html?screen=analysis` | 留存曲线和图表解释浮层 |
+| Flightcast · Fey AI | `flightcast.html?screen=chat` | 播客聊天、平台指标、示例图表 |
 
-> 首页共展示 8 个交互界面入口（安装弹窗 + Newsletter 四个页面 + 2 个演示页面 + Granola 风格侧栏）。`newsletter.html` 的 4 个入口通过 `screen` 查询参数切换状态。
+> 首页共展示 12 个交互界面入口（安装弹窗 + Newsletter 四个页面 + 2 个演示页面 + Granola 风格侧栏）。`newsletter.html` 的 4 个入口通过 `screen` 查询参数切换状态。
 
 ### 快速运行
 
@@ -123,3 +127,9 @@ python -m http.server 5173
 ## Granola 风格侧栏复刻
 
 源于用户提供的三态工作区侧栏设计图：左 Home、中央工作区切换下拉列表、右 Activity。项目提供 `granola.html` 独立交互演示页面，从首页「Sidebars」分类可以进入。演示可切换 Home/Activity、工作区、导航项目，支持搜索、创建本地聊天与活动、读取未读状态、Esc 关闭和 Ctrl/Cmd+K 搜索。状态在本地浏览器存储，不连接 Granola 官方服务，也不使用其商标资源。
+
+## Flightcast 四屏复刻
+
+来自用户提供的四张 Flightcast UI 截图，独立入口为 [flightcast.html](https://weepwood.github.io/pop-up/flightcast.html)。使用原生 HTML/CSS/JavaScript 复刻导航、布局、平台设置卡片和浮层；通过 URL 参数 `screen=media|title|analysis|chat` 切换四个截图场景。
+
+可用交互：平台 override 开关、选取/拖入本地媒体文件、标题建议左右切换/采纳/跳过、章节编辑、播客样例留存曲线、CSV 示例导出、图表解析、聊天问题与预设回复、亮暗主题、返回作品首页。文件内容不会上传到服务器；仅记录选择的文件名与大小。AI 文字和数据均为本地示例，不代表实时或真实服务。`flightcast-preview.css` 为首页展示缩略卡片。项目不隶属于 Flightcast。

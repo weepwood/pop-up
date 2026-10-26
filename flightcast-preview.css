@@ -1,0 +1,23 @@
+.flightcast-visual{background:linear-gradient(150deg,#f1f1f3,#eaeaea);padding:18px}
+.fc-mock{width:100%;height:240px;background:#fff;border:1px solid #ddd;border-radius:9px;display:grid;grid-template-columns:24% 76%;overflow:hidden;box-shadow:0 12px 30px #0000000e;font-size:10px}
+.fc-mock>aside{background:#f8f8f8;padding:11px 7px;display:flex;flex-direction:column;gap:10px;border-right:1px solid #ebebeb;min-width:0}
+.fc-mock>aside strong{font-size:10px;margin-bottom:9px;white-space:nowrap}.fc-mock>aside span{font-size:9px;color:#999;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fc-area{position:relative;min-width:0}
+.fc-area>header{height:27px;border-bottom:1px solid #e5e5e5;padding:8px 12px;color:#999;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:9px}
+.fc-inner{padding:15px 12px}
+.fc-inner h4{font-size:14px;letter-spacing:-.3px;margin:0 0 6px}
+.fc-inner>small{font-size:9px;color:#888;line-height:1.4}
+.fc-episode{border:1px solid #e6e6e6;border-radius:5px;margin-top:14px;overflow:hidden;background:#fff;min-height:145px}
+.fc-episode>strong{display:block;padding:8px 11px;border-bottom:1px solid #eee;font-size:10px}
+.fc-tabs{padding:8px 10px;border-bottom:1px solid #eee;color:#888;font-size:9px;white-space:nowrap}
+.fc-tabs b{color:#7134db;border-bottom:1px solid #7134db;padding-bottom:8px}
+.fc-box{background:#fcfcfc;border:1px dashed #e5e5e5;text-align:center;display:grid;place-items:center;margin:10px;width:47%;min-height:75px;color:#aaa;font-size:9px;overflow:hidden}
+.fc-box svg{width:100%}
+.fc-pop{position:absolute;top:58px;right:12px;width:49%;min-height:171px;padding:12px 10px;background:#fff;border-radius:9px;border:1px solid #e4e4e4;box-shadow:0 9px 25px #00000011;overflow:hidden}
+.fc-pop>strong{font-size:10px;display:block}
+.fc-pop>p{font-size:8px;line-height:1.4;color:#a3a3a3;margin:7px 0 10px}
+.fc-pop-row{display:flex;align-items:center;justify-content:space-between;gap:3px;font-size:9px;white-space:nowrap;overflow:hidden;padding:7px 6px;background:#fafafa;border:1px solid #e7e7e7;border-radius:5px;margin-top:4px}
+.fc-pop-row b,.fc-pop-row span{font-size:11px;color:#121424}
+.fc-pop-row span{color:#ccc}
+.fc-placeholder{border:1px dashed #ddd;font-size:9px;padding:10px 6px;line-height:1.45;text-align:center;color:#666;min-height:38px;max-height:59px;overflow:hidden}
+@media(max-width:670px){.fc-mock{height:215px}.fc-pop{width:52%;top:49px;right:6px}.fc-mock>aside{padding:7px 4px}.fc-mock>aside span{font-size:8px}.fc-inner{padding:12px 7px}.fc-inner h4{font-size:12px}}

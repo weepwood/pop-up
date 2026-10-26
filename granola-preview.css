@@ -1,0 +1,29 @@
+.granola-card .card-description{padding:37px 32px}
+.granola-visual{background:#ececec!important}
+.granola-thumbnails{display:flex;gap:13px;align-items:stretch;width:100%;height:260px}
+.granola-mini{position:relative;min-width:0;flex:1;border-radius:11px;border:1px solid #dedede;background:#fafafa;box-shadow:0 3px 4px #00000009;padding:11px 9px;overflow:hidden}
+.granola-mini-top{display:flex;align-items:center;gap:5px;min-width:0;white-space:nowrap;font-size:12px}
+.granola-mini-top b{font-weight:570;overflow:hidden;text-overflow:ellipsis}
+.granola-mark{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;background:#aec02f;border-radius:5px;color:#243014;font-size:14px;font-weight:800;font-style:normal;flex:none}
+.granola-up{font-size:9px;color:#777;margin-left:1px}.granola-mini-search{margin-left:auto;font-size:17px;color:#858585}
+.granola-mini-tabs{display:flex;border-radius:8px;background:#eee;margin:15px 0 18px;font-size:11px;text-align:center;padding:2px}
+.granola-mini-tabs span{flex:1;color:#999;padding:5px 2px}.granola-mini-tabs .on{background:#fff;color:#333;border-radius:7px;box-shadow:0 1px 2px #0002}
+.granola-mini-nav{display:flex;flex-direction:column;gap:1px}
+.granola-mini-nav span{font-size:10px;color:#7a7a7a;padding:7px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.granola-mini-nav span.sel{background:#eaeaea;border-radius:7px;color:#333}
+.granola-mini-heading{color:#858585;font-size:10px;margin:14px 5px 10px}.granola-mini-heading.first{margin-top:21px}
+.granola-mini-project{font-size:10px;color:#8b8b8b;padding:7px 5px}
+.granola-mini-dropdown{position:absolute;left:8px;right:8px;top:39px;background:#fff;border:1px solid #e2e2e2;border-radius:10px;box-shadow:0 6px 10px #00000010;padding:4px 0}
+.granola-mini-dropdown>span{display:flex;align-items:center;font-size:10px;gap:8px;height:30px;padding:0 8px;white-space:nowrap}
+.granola-mini-dropdown>span b{margin-left:auto;font-size:9px}
+.granola-mini-dropdown>span i{display:grid;place-items:center;font-style:normal;flex:none;font-size:9px;width:17px;height:17px;border-radius:4px}
+.granola-mini-dropdown hr{border:0;border-top:1px solid #eee;margin:5px 0}
+.granola-mini-dropdown .sub{color:#555}
+.granola-mini-dropdown .ramp-mark{background:#e8ff00;color:#171717}
+.granola-mini-dropdown .vercel-mark,.granola-mini-dropdown .perp-mark{background:#050505;color:white}
+.granola-mini-dropdown .stripe-mark{background:#6850ec;color:white}
+.granola-mini-activity{display:flex;align-items:center;gap:3px;white-space:nowrap;font-size:9.5px;padding:8px 5px;overflow:hidden;color:#333}
+.granola-mini-activity i{width:5px;height:5px;border-radius:50%;background:#087ce3;margin-left:auto;flex:none}
+.granola-mini-activity i.orange{background:#ec8400}
+@media(max-width:670px){.granola-card .card-description{padding:24px 25px}.granola-thumbnails{height:222px;gap:8px}.granola-mini{padding:9px 5px}.granola-mini-top{font-size:10px}.granola-mini-dropdown>span{font-size:9px;gap:3px;padding:0 4px}.granola-mini-nav span{font-size:9px}.granola-mini-activity{font-size:9px}}
+@media(max-width:400px){.granola-thumbnails{gap:5px}.granola-mini-top b{font-size:9px}.granola-mini-search{display:none}.granola-mini-dropdown>span i{width:13px;height:13px}}
